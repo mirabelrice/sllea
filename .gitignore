@@ -1,0 +1,42 @@
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+database.yml
+secrets.yml
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+
+# Wordpress files #
+###################
+.htaccess
+xmlrpc.php
+sitemap.xml
+sitemap.xml.gz
+readme.html
+license.txt
+content/uploads/*
+content/upgrade/*
+content/cache/*
+content/backup/*
+content/blogs.dir/*
+wp-config.php
+wp-config-sample.php
+wp-security-keys.php
+
+# W3TC Cache Files #
+###################
+content/w3tc-config/*
+
+# Misc #
+###################
+
+_assets
+node_modules
+ai-cache/*
+vendor/*

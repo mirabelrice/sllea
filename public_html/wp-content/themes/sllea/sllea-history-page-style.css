@@ -1,0 +1,105 @@
+
+h1 {
+	padding: 15px 50px;
+	padding-left: 20%;
+	margin-bottom: 0;
+	font-size: 50px;
+	background-color: rgba(255,255,255,.5);
+}
+
+.fluid-container p {
+	color:#646568;
+	font-size: 18px;
+}
+.text-field{
+	text-align: left;
+}
+.history.main-content {
+	margin-top: 580px;
+}
+.main-content .wrap {
+	padding: 0;
+}
+.text-image-block {
+	height: 100%;
+	width: 100%;
+}
+.image-field {
+	position: fixed;
+	top:50px;
+	width: 100%;
+	z-index: -99;
+}
+.image-field img{
+	width:100%;
+	height: 800px;
+}
+.image-field.single {
+	text-align: center;
+}
+
+.fluid-container {
+	position: relative;
+	padding: 20px 20%;
+	text-align: center;
+	z-index: 10;
+	background-color: #fff;
+}
+
+.fluid-container .text-field {
+	color:rgba(100, 101, 104, .7);
+	font-size: 20px;
+
+}
+@media only screen and (max-width: 960px) {
+	.fluid-container p {
+		font-size: 14px;
+	}
+	h1 {
+		font-size: 40px;
+	}
+	.image-field img {
+		height: 500px;
+	}
+	.history.main-content {
+		margin-top: 445px;
+	}	
+
+}
+/* iPHONE 5*/
+@media only screen and (max-width: 768px){ 
+	h1 {
+		padding-left: 10%;
+	}
+	.fluid-container p {
+		margin: 10px 0;
+	}
+	.fluid-container {
+		padding: 20px 10%;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	h1 {
+		font-size: 30px;
+	}
+	.image-field img {
+		height: 300px;
+	}
+	.history.main-content {
+		margin-top: 275px;
+	}	
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 667px) {
+	h1 {
+		font-size: 30px;
+	}
+	.image-field img {
+		height: 300px;
+	}
+	.history.main-content {
+		margin-top: 275px;
+	}
+}

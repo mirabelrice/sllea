@@ -1,0 +1,163 @@
+.slide-viewport {
+	display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	align-items: stretch;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	width: 100%;
+  	max-width: 960px;
+  	height: 400px;
+  	margin: auto;
+  	background-size: cover;
+  	background-position: 50% 50%;
+}
+.scroller {
+	/*
+	flex: 1;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	*/
+	height:100%;
+	width: 960px;
+ 	overflow: hidden;
+}
+.slides {
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+	-webkit-transition: -webkit-transform 1s ease-out;
+    transition: transform 1s ease-out;
+}
+.slides li{
+	display:inline-block;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	z-index: 15;
+}
+.slides .text-wrap {
+	position: absolute;
+	top:0;
+	bottom: 0;
+	height: 200px;
+	width:100%;
+	margin: auto 0;
+	padding: 0 70px;
+	text-align: center;
+}
+.slide-text.bold {
+	color: #00b3e3;
+	font-size: 60px;
+	font-weight: 600;
+}
+.slide-text {
+	display: block;
+	padding: 0 20px;
+	font-size: 24px;
+	color: #646568;
+	vertical-align: middle;
+	white-space: normal;
+}
+
+/* ## slide controllers
+--------------------------------------------- */
+#slide-controls {
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	padding: 0 85px;
+	text-align: center;
+	line-height: .5;
+}
+#slide-controls .controls {
+	display: inline-block;
+	margin-top: 15px;
+}
+#slide-controls .controls.left li {
+	display: inline-block;
+	width:12px;
+    height:12px;
+	margin: 4px;
+    border: 1px solid #8e8e93;
+    border-radius: 50%;
+    text-align:center;
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    cursor: pointer;
+}
+#slide-controls .controls.right {
+	float: right;
+	color: #8e8e93;
+	cursor: pointer;
+}
+#slide-controls .controls.right span{
+	padding: 5px;
+}
+#slide-controls .controls.left li:hover,
+#slide-controls .controls.left li.selected {
+	background-color: #8e8e93 !important;
+}
+#slide-controls .controls .paused,
+#slide-controls .controls.right i:hover {
+	color: rgba(100, 101, 104, .9);
+}
+
+@media only screen and (max-width: 960px) { 
+	.scroller {
+		width: 800px;
+	}
+}
+
+@media only screen and (max-width: 800px) { 
+	.scroller {
+		width: 668px;
+	}
+	.slide-viewport {
+		height: 430px;
+	}
+	.slide-text.bold{
+		font-size: 40px;
+	}
+	.slide-text {
+		font-size: 18px;
+	}
+
+	#slide-controls {
+		padding: 0 20px;
+	}
+}
+
+/* iPHONE 5,6*/
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 667px) {
+	.slides li {
+		font-size: 20px;
+	}
+	.slide-viewport {
+		height: 169px;
+	}
+	#slide-controls .controls.left li{
+		width: 10px;
+		height: 10px;
+	}
+	#slide-controls .controls.right span {
+		font-size: 12px;
+	}
+}

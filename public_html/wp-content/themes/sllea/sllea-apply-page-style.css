@@ -1,0 +1,285 @@
+
+h1 {
+	margin: 0 0 35px;
+}
+.site-container {
+	height: 100%;
+}
+.background {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background:url('http://sllea.local:8888/wp-content/themes/sllea/images/bulletin-board.jpg') no-repeat;
+	background-size: cover;
+}
+.apply.main-content {
+	position: relative;
+	text-align: center;
+}
+.apply.main-content .wrap {
+	position: relative;
+	padding: 80px 100px;
+}
+.thumbtack {
+	width: 60px;
+	height: auto;
+}
+#applicant-criteria {
+	width:500px;
+	padding: 0px 30px 70px;
+	float: left;
+	box-shadow: 4px 3px 22px -2px #000;
+	background-color: #ffffff;
+}
+
+/*
+#applicant-criteria:before {
+	content: '';
+	display: block;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.25);
+	margin: auto;
+
+	background: #FA0D1C radial-gradient(circle 32px at 8px 4px, #FA0D1C, #330a0a);
+}
+*/
+.qualification p {
+	margin-bottom: 30px;
+	font-size: 14px;
+	text-align: left;
+}
+
+#applicant-criteria  div:last-child p{
+	margin-bottom: 0;
+}
+#post-it {
+	position: absolute;
+	right: 10%;
+	/*
+	width: 400px;
+	height: 278px;
+	*/
+}
+#post-it div {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+ 
+#polaroid {
+	position: absolute;
+	right: 3%;
+	bottom: 15%;
+	margin-top: 50px;
+	padding: 10px;
+}
+.tape {
+	position: absolute;
+	width: 100px;
+	height: 57px;
+	-ms-transform: rotate(-15deg);
+	-webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
+    transform: rotate(-15deg);
+	background:url('http://sllea.local:8888/wp-content/themes/sllea/images/tape.png') no-repeat;
+	background-size: cover;
+
+}
+.tape.bottom {
+	bottom: 0;
+	right: -20px;
+}
+.tape.top {
+	top: 0;
+	left: -20px;
+}
+.ui-dialog {
+	position: fixed;
+	top: 50px;
+	padding:30px;
+	background-color: #fff;
+}
+
+.ui-dialog:focus {
+	outline: none;
+}
+
+.ui-dialog-titlebar {
+	display: none;
+}
+
+#coming-soon-window {
+	display: none;
+}
+
+#main-text-area {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#main-text-area h2 {
+	display:inline-block;
+	margin: 0;
+	font-size: 70px;
+	color: #646568;
+}
+
+#main-text-area p {
+	margin: 0;
+	font-size: 24px;
+	text-align: left;
+	color: #8e8e93;
+}
+
+.close-window {
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	right: 10px;
+	/*padding: 10px 5px 14px 5px; */
+	margin: 10px 15px;
+	line-height: 0;
+    font-size: 31px;
+    font-weight: normal;
+    color: #8e8e93; 
+    cursor: pointer;
+}
+
+#close-window:before {
+	content: "x";
+}
+
+.ui-dialog .image-logo {
+	text-align: center;
+}
+.ui-dialog input[type=text] {
+	margin-right: 5px;
+	border-radius: 7px;
+	color: #c0c0c0;
+}
+
+.ui-dialog input[type=submit] {
+	border-radius: 7px;
+	background-color: #FA0D1C;
+	font-weight: normal;
+	color: #fff;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #c0c0c0
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #c0c0c0
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #c0c0c0
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: #c0c0c0
+}
+.email-form {
+	text-align: center;
+}
+
+.email-input {
+	width: 50%;
+}
+
+.error-message.hidden {
+	display: none;
+}
+
+#apply-link {
+	text-align: center;
+	margin: 60px;
+}
+#apply-link a{
+	background-attachment: scroll;
+	background-color: #00b3e3;
+	background-image: none;
+	background-size: auto;
+	color: #ffffff;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: normal;
+	transition-duration: 0.15s;
+	transition-property: background;
+	transition-timing-function: ease-in-out;
+	display: inline-block;
+	width:300px;
+	padding: 20px 0px;
+	text-align: center;
+	font-size:21px;	
+	box-shadow: 2px 2px 4px 1px #b4b6b5;
+	text-transform: uppercase;
+}
+#apply-link a:hover {
+	background-color: #FA0D1C;
+}
+@media only screen and (max-width: 960px) {
+	.apply.main-content .wrap {
+		padding: 80px 20px;
+	}
+	#polaroid {
+		right: 0;
+	}
+	#post-it {
+		right: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.site-inner, .wrap {
+		height: auto;
+	}
+	#applicant-criteria {
+		width: 400px;
+		padding-bottom: 40px;
+	}
+	#post-it{
+		width: 300px;
+		height: 209px;
+	}
+	#post-it p {
+		font-size: 22px;
+		-ms-transform: rotate(-20deg);
+		-webkit-transform: rotate(-20deg); /* Chrome, Safari, Opera */
+	    transform: rotate(-20deg);
+	}
+	#polaroid {
+		width: 270px;
+	}
+	.thumbtack {
+		width: 45px;
+	}
+	.tape {
+		width: 60px;
+		height: 34px;
+	}
+}
+@media only screen and (max-width: 414px) {
+	h1 {
+		font-size: 18px;
+	}
+	.qualification p {
+		font-size: 12px;
+	}
+	#applicant-criteria {
+		width: 100%;
+		padding: 0px 30px 70px;
+	}
+	#post-it{
+		display: none;
+	}
+	#polaroid {
+		display: none;
+	}
+}
+

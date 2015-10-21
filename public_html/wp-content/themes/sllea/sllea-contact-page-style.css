@@ -1,0 +1,20 @@
+
+h1 {
+	padding-left: 30px;
+	color: #3E4B51;
+	font-size: 50px;
+	font-weight: 600;
+}
+
+h2 {
+	margin-bottom: 30px;
+	color: #B0B0B0;
+	font-size: 40px;
+}
+
+.bio-section {
+	padding: 30px;
+	margin-bottom: 100px;
+	box-shadow: 1px 1px 4px 1px #dbdbdb;
+	border-radius: 15px;
+}
