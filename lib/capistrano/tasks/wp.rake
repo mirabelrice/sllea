@@ -30,6 +30,29 @@ namespace :wp do
       end
     end
 
+    desc "Update the WordPress DB version when the core files are also updated"
+    task :update_db do
+      on roles(:web) do |server|
+        within release_path do
+          sites = JSON.parse(capture(:wp, "site list --fields=blog_id,deleted --format=json"))
+          sites.each do |site|
+
+            # Skip sites which are deleted
+            next if (site['deleted'] == '1')
+
+            # Get the site URL
+            site_url = capture(:wp, "site url #{site['blog_id']}")
+
+            # Update the RSS option
+            execute :wp, "core update-db --url=#{site_url}"
+
+            info "Updating DB for #{site_url}"
+
+          end
+        end
+      end
+    end
+
     desc "Create or update the WP Security Keys"
     task :generate_security_keys do
       on roles(:web) do
