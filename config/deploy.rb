@@ -1,10 +1,6 @@
-# config valid only for current version of Capistrano
-lock '3.4.0'
-
 #wordpress setup
 config = YAML::load_file('./config/config.yml')
 set :local_domain, config['development_url']
-
 #sllea setup
 set :application, "sllea"
 set :repo_url, 'git@github.com:mirabelrice/sllea.git'
@@ -18,6 +14,8 @@ set :ssh_options, {
   forward_agent: true
 }
 set :keep_releases, 5
+
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 
 #linked files and directories
 set :linked_files, %w{wp-config.php}

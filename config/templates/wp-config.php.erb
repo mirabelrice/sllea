@@ -5,6 +5,8 @@
 /*** ENVIRONMENT ***/
 define('WP_ENV', '<%= wp_env %>');
 
+$table_prefix  = 'wp_';
+
 /*** DATABASE CONFIGURATION ***/
 define('DB_NAME', '<%= database['database'] %>');
 define('DB_USER', '<%= database['username'] %>');
@@ -13,10 +15,17 @@ define('DB_HOST', '<%= database['host'] %>');
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
+/*** Localization Settings ***/
+define('WPLANG', '');
+
+/*** Security Keys (Salt) ***/
+require('/wp-security-keys.php');
+define('DOMAIN_CURRENT_SITE', '<%= wp_domain %>');
+
 /*** PATHS/URLS ***/
 define('WP_HOME', 'http://'.DOMAIN_CURRENT_SITE);
 define('WP_SITEURL', 'http://'.DOMAIN_CURRENT_SITE);
-if(!defined('ABSPATH') define('ABSPATH', '<%= project_path %>/public_html/'));
+if(!defined('ABSPATH')) define('ABSPATH', '<%= project_path %>/public_html/');
 
 /*** INCLUDES ***/
-require_once(ABSPATH . 'wp-setting.php');
+require_once(ABSPATH . 'wp-settings.php');

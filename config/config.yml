@@ -1,2 +1,3 @@
 #local development url
 development_url: sllea.local:8888
+test_url: sllea.local:8889

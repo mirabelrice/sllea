@@ -5,11 +5,16 @@ production:
   password:
 staging:
   host:
-  database: 
+  database:
   username:
   password:
 local:
-  host: 
-  database: 
-  username: 
-  password: 
+  host:
+  database:
+  username:
+  password:
+test:
+  host:
+  database:
+  username:
+  password:
