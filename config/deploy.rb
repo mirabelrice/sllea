@@ -5,6 +5,7 @@ set :local_domain, config['development_url']
 set :application, "sllea"
 set :repo_url, 'git@github.com:mirabelrice/sllea.git'
 set :scm, :git
+set :tmp_dir, "#{fetch(:stage)}/tmp"
 
 #Capistrano setup
 set :format, :pretty
@@ -25,7 +26,9 @@ namespace :deploy do
 	#wp files task
 	desc "Create WP Files"
 	task :create_wp_files do
-		execute :touch, "#{shared_path}/wp-config.php"
+		on roles(:app) do
+			execute :touch, "#{shared_path}/wp-config.php"
+		end
 	end
 
 	after 'check:make_linked_dirs', :create_wp_files
