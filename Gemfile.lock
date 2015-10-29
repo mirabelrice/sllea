@@ -108,6 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano (~> 3.4.0)
+  json
   rails
   rake
 
