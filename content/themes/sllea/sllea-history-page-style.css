@@ -3,14 +3,9 @@ h1 {
 	padding: 15px 50px;
 	padding-left: 20%;
 	margin-bottom: 0;
-	font-size: 50px;
 	background-color: rgba(255,255,255,.5);
 }
 
-.fluid-container p {
-	color:#646568;
-	font-size: 18px;
-}
 .text-field{
 	text-align: left;
 }
@@ -52,12 +47,6 @@ h1 {
 
 }
 @media only screen and (max-width: 960px) {
-	.fluid-container p {
-		font-size: 14px;
-	}
-	h1 {
-		font-size: 40px;
-	}
 	.image-field img {
 		height: 500px;
 	}
@@ -80,9 +69,6 @@ h1 {
 }
 
 @media only screen and (max-width: 320px) {
-	h1 {
-		font-size: 30px;
-	}
 	.image-field img {
 		height: 300px;
 	}
@@ -93,9 +79,6 @@ h1 {
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 667px) {
-	h1 {
-		font-size: 30px;
-	}
 	.image-field img {
 		height: 300px;
 	}

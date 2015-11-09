@@ -1,7 +1,7 @@
 /* # Genesis Framework
 Theme Name: sslea
 Description: styles for donation page
-Author: Mirabel Rice 
+Author: Mirabel Rice
 template: Donate Page
 */
 
@@ -13,9 +13,12 @@ template: Donate Page
 
 body {
 	background-color:#00b3e3;
-	color:#8e8e93;
-	font-size: 16px;
 }
+
+h1 {
+	margin-bottom: 0;
+}
+
 .site-container {
 	position: relative;
 }
@@ -29,30 +32,15 @@ body {
 	max-width: 800px;
 }
 
-p {
-	margin: 0;
-	font-size: 16;
-}
-
-h1,
-h2{
-	font-size: 30px;
-	text-align: center;
-	letter-spacing: 1px;
-}
-
 fieldset h1,
 legend,
-#contributor-info > p,
-#payment-info p{
+#contributor-info > h2,
+#payment-info h2{
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	font-size: 22px;
-	font-weight: 600;
-	letter-spacing: 0;
 	text-align: left;
-	color: #646568;
 }
 
 
@@ -80,9 +68,6 @@ button:focus {
 	height: 36px;
 	padding: 5px 9px;
 	border-radius: 7px;	
-	font-weight: normal; 
-	font-size: 21px;
-	color:#666;
 }
 
 #donate-amount input {
@@ -95,7 +80,6 @@ button:focus {
 	margin-left: 20px;
 	margin-bottom: 5px;
 }
-
 
 #donation-frequency input {
 	width: auto;
@@ -203,19 +187,22 @@ select.invalid {
 p.invalid {
 	color:#FA0D1C;
 }
+/*Title/text */
+#text-block {
+	margin-bottom: 20px;
+}
 
 /* ## Donation Amount Info
 ---------------------------------------------------------------------------------------------------- */
 #sllea-make-donation {
 	text-align: center;
 }
-
+#sllea-make-donation h2 {
+	margin: 0;
+}
 #donate-statement {
-	padding: 20px;
-	text-align: center;
-	line-height: 1.5;
-	font-weight: 400;
-	font-size: 18px;
+	display: inline-block;
+	margin-bottom: 14px;
 }
 
 #donate-statement  {
@@ -227,7 +214,7 @@ p.invalid {
 	display:-webkit-flex;
 	-webkit-flex-direction: row;
 	-webkit-justify-content: center;
-	
+
 	/* Spec - Firefox, Chrome, Opera */
 	display: flex;
 	flex-direction: row;
@@ -236,7 +223,7 @@ p.invalid {
 	width: 100%;
 }
 
-#select-donate-amount li {
+li.donate-option {
 	display: inline-block;
 	width: 12%;
 	height: auto;
@@ -262,7 +249,7 @@ p.invalid {
 	display: inline-block;
 }
 
-#donation-info span {
+#donation-info label {
 	padding-right: 20px;
 }
 
@@ -309,8 +296,8 @@ p.invalid {
 	border: none;
 }
 
-#contact-info span,
-#payment-info span {
+#contact-info label,
+#payment-info label {
 	width: 50px;
 	display: inline-block;
 	vertical-align: top;
@@ -381,10 +368,8 @@ p.invalid {
 
 #final-donation-amount,
 #donation-summary p {	
+	margin: 0;
 	text-align: center;
-	color: #3E4B51;
-	font-size: 20px;
-	font-weight: 400;
 }
 
 #amount-due {
@@ -401,8 +386,8 @@ p.invalid {
 }
 
 #final-donation-amount {
-	font-size: 42px !important;
-	font-weight: 300 !important;
+	font-size: 22px;
+	line-height: 22px;
 }
 
 .payment-bottom {
@@ -416,41 +401,28 @@ p.invalid {
 	#select-donate-amount li {
 		margin: 15px 1.8%;
 	}
-	#select-donate-amount a {
-		font-size: 14px;
-	}
 }
 
 @media only screen and (max-width: 768px) {
-	h1 {
-		font-size: 20px;
-	}
-	h2 {
-		font-size: 28px;
-	}
-
-	p {
-		font-size: 16px;
+	#donate-statement p {
+		font-size: 14px;
+		line-height: 20px;
 	}
 	.donate-option {
 		line-height: 400%;
 		width:10%;
 	}
 }
+@media only screen and (max-width: 568px) {
 
+}
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 568px)  {
 	body {
 		font-size: 10px;
 	}
-	h2 {
-		font-size: 20px;
-	}
-	p {
-		line-height: 1.1;
-		font-size: 14px;
-	}
+
 	#payment-info p,
 	#contributor-info > p,
 	fieldset h1 {
@@ -492,11 +464,11 @@ and (max-device-width : 568px)  {
 		font-size: 8px;
 	}
 
-	#donation-info span {
+	#donation-info label {
 		padding-right: 0;
 	}
 
-	#contact-info span, 
+	#contact-info label,
 	#payment-info span {
 		width: 100%;
 	}
@@ -512,12 +484,12 @@ and (max-device-width : 568px)  {
 		width: 60%;
 	}
 	#donation-summary p {
-		font-size: 15px;
+		margin: 0;
 	}
-
 	#final-donation-amount {
-		margin-top: 5px!important;
-		font-size: 18px!important;
+		margin-top: 5px;
+		font-size: 16px;
+		font-weight: 800;
 	}
 
 	#amount-due .per-month-selected {
@@ -557,7 +529,7 @@ and (max-device-width : 568px)  {
 		font-size: 10px; 
 		color: #7D8285; 
 	}
-}	
+}
 
 
 

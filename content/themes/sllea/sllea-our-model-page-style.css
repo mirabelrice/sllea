@@ -1,24 +1,6 @@
-
 h2 {
 	position: relative;
 	padding: 0 3%;
-	font-size: 22px;
-	font-weight: 400;
-	color: #3E4B51;
-	/*
-	transition-property: opacity, margin;
- 	transition-duration: 2s, 1s;
- 	transition-timing-function: ease;
-	-webkit-transition-property: opacity, margin;
-	-webkit-transition-duration: 2s, 1s;
-	-webkit-transition-timing-function: ease;
-	-moz-transition-property: opacity, margin;
-	-moz-transition-duration: 2s, 1s;
-	-ms-transition-timing-function: ease;
-	-o-transition-duration: 2s, 1s;
-	-o-transition-duration: 2s, 1s;
-	-o-transition-timing-function: ease;
-	*/
 }
 .wrap {
 	max-width: 1280px;
@@ -33,12 +15,11 @@ h2 {
 	-webkit-align-items: center;
 	-webkit-justify-content: space-between;
 
-	
 	/* Spec - Firefox, Chrome, Opera */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;	
+	justify-content: space-between;
 	color: #7D8285;
 }
 
@@ -94,34 +75,12 @@ h2 {
 	position: relative;
 	display:inline-block;
 	width: 100%;
-	line-height: 1.5;
 	overflow:hidden;
-	/*
-  	transition-property: opacity, margin;
- 	transition-duration: 2s, 1s;
- 	transition-timing-function: ease;
-	-webkit-transition-property: opacity, margin;
-	-webkit-transition-duration: 2s, 1s;
-	-webkit-transition-timing-function: ease;
-	-moz-transition-property: opacity, margin;
-	-moz-transition-duration: 2s, 1s;
-	-ms-transition-timing-function: ease;
-	-o-transition-duration: 2s, 1s;
-	-o-transition-duration: 2s, 1s;
-	-o-transition-timing-function: ease;
-	*/
 }
 .model-section p {
 	padding: 0 3%;
 	margin: 0;
-	font-size: 14px;
 }
-@media only screen and (max-width: 960px) {
-	.model-section p {
-		font-size: 12px;
-	}
-}
-
 @media only screen and (max-width: 800px) {
 	.wrap,
 	.main-content,
@@ -140,9 +99,6 @@ h2 {
 	.model-section {
 		width: 100%;
 	}
-	.model-section p {
-		font-size: 14px;
-	}
 	.model-section.image{
 		order: 1;
 	}
@@ -154,16 +110,5 @@ h2 {
 		margin-bottom: 20px;
 		text-align: center;
 	}
-}
-@media only screen 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-  	h2 {
-  		font-size: 16px;
-  	}
-  	.model-section p {
-		font-size: 12px;
-	}
-
 }
 

@@ -35,7 +35,7 @@
 								<ul></ul>	
 							</div>
 						</div>
-						<h2>Thank you for supporting Smart, Living, <br>Learning &amp Earning with Autism (SLLEA)</h2>
+						<h1>Thank you for supporting Smart, Living, <br>Learning &amp Earning with Autism (SLLEA)</h1>
 						<div id= "text-block">
 							<?php
 								$donate_statement = get_field("donate_statement");
@@ -46,21 +46,21 @@
 						</div>
 						<fieldset id= "select-donate-amount">
 							<legend>
-								<h1>Make a Donation</h1>
+								<h2>Make a Donation</h2>
 							</legend>
 							<section id= "donation-amount-entry">
 								<ul id= "donation-suggestions">
-									<li class= "donate-option"><a data-amount= "10">$10</a></li>
-									<li class= "donate-option"><a data-amount= "50">$50</a></li>
-									<li class= "donate-option"><a data-amount= "75">$75</a></li>
-									<li class= "donate-option"><a data-amount= "100">$100</a></li>
-									<li class= "donate-option"><a data-amount= "1000">$1000</a></li>
-									<li class= "donate-option"><a data-amount= "Other">Other</a></li>
+									<li class= "donate-option"><div class="circle-wrap"><a data-amount= "10">$10</a></div></li>
+									<li class= "donate-option"><div class="circle-wrap"><a data-amount= "50">$50</a></div></li>
+									<li class= "donate-option"><div class="circle-wrap"><a data-amount= "75">$75</a></div></li>
+									<li class= "donate-option"><div class="circle-wrap"><a data-amount= "100">$100</a></div></li>
+									<li class= "donate-option"><div class="circle-wrap"><a data-amount= "1000">$1000</a></div></li>
+									<li class= "donate-option"><div class="circle-wrap"><a data-amount= "Other">Other</a></div></li>
 								</ul>
 							</section>
 							<div class= "fieldset-wrap">
 								<div id= "donation-info">
-									<span class= "entry-label">Amount</span>
+									<label class= "entry-label">Amount</label>
 									<i class="fa fa-usd"></i>
 									<div id= "donate-amount" class= "required">
 										<input id= "entered-donate-amount" class= "donate-entry" type="number" name= "donation" min="0" step="1" pattern="[0-9]*" value="10">
@@ -71,12 +71,12 @@
 							</div>
 						</fieldset>
 						<div id="contributor-info">
-							<p>Contributor</p>
+							<h2>Contributor</h2>
 							<div id= "contributor-wrap">
 								<fieldset id= "contact-info">
 									<div class= "fieldset-wrap">
 										<div class="full-name">
-											<span>Name</span>
+											<label>Name</label>
 											<div class="donate-entry first-name">
 												<input type= "text" name= "first-name">
 												<p>First Name</p>
@@ -87,7 +87,7 @@
 											</div>
 										</div>
 										<div id="email">
-											<span>Email</span>
+											<label>Email</label>
 											<div class="donate-entry">
 												<input type= "text" name= "email">
 											</div>
@@ -95,7 +95,7 @@
 									</div>
 								</fieldset>
 								<fieldset id="payment-info">
-									<legend><p>Payment Information</p></legend>
+									<legend><h2>Payment Information</h2></legend>
 									<section>
 										<div id="donation-summary" class= "payment-bottom">
 											<p>Amount:</p>
@@ -104,8 +104,8 @@
 												<span class= "per-month-selected">/mo</span>
 											</div>
 										</div>
-										<div class= "payment-bottom donate-link large">
-											<button id= "make-donation">Donate Now</button>
+										<div class= "payment-bottom donate-link medium">
+											<a id= "make-donation">Donate Now</a>
 										</div>
 									</section>
 								</fieldset>
