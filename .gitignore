@@ -13,7 +13,6 @@ Thumbs.db
 
 # Wordpress files #
 ###################
-.htaccess
 xmlrpc.php
 readme.html
 license.txt

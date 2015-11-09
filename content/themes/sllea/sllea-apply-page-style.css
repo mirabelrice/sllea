@@ -9,7 +9,7 @@ h1 {
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	background:url('http://sllea.local:8888/wp-content/themes/sllea/images/bulletin-board.jpg') no-repeat;
+	background:url('images/bulletin-board.jpg') no-repeat;
 	background-size: cover;
 }
 .apply.main-content {
@@ -82,7 +82,7 @@ h1 {
 	-ms-transform: rotate(-15deg);
 	-webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
     transform: rotate(-15deg);
-	background:url('http://sllea.local:8888/wp-content/themes/sllea/images/tape.png') no-repeat;
+	background:url('images/tape.png') no-repeat;
 	background-size: cover;
 
 }

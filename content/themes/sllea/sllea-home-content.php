@@ -118,7 +118,7 @@
 						</div>
 						<div id="donate-block" class= "content-block">
 							<div class="donate-link large">
-								<a href="http://sllea.local:8888/?page_id=20">DONATE NOW</a>
+								<a href= "'. WP_SITEURL . '/donate">DONATE NOW</a>
 							</div>
 						</div>
 					</div>	
