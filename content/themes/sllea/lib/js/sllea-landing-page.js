@@ -94,7 +94,7 @@ jQuery(document).ready(function($) {
 		.addTo(scrollMagicController);
 
 	function updateDim() {
-		if(windowHeight >= 500) {
+		if(windowHeight >= 768) {
 			landingPage.css('height', windowHeight);
 		}
 		

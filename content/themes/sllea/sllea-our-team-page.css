@@ -1,19 +1,10 @@
-h1 {
-	color: #3E4B51;
-	font-size: 50px;
-	font-weight: 600;
-}
-
-h2 {
-	margin-bottom: 30px;
-	color: rgba(100, 101, 104, .9)
-	font-size: 40px;
-}
-
 h3 {
 	margin: 0;
-	font-size: 18px;
-	color: rgba(100, 101, 104, .7);	
+}
+
+.member-text-area h2 {
+	margin-bottom: 0;
+	color: #00b3e3;
 }
 
 .main-content .wrap {
@@ -43,18 +34,6 @@ h3 {
 	display: inline-block;
 }
 
-.member-text-area p {
-	margin: 5px 0;
-	line-height: 1.3;
-	font-size: 14px;
-	color: rgba(100, 101, 104, .7);
-}
-
-.member-text-area h2 {
-	font-size: 23px;
-	margin-bottom: 0;
-	color: #00b3e3;
-}
 
 .member-text-area {
 	display: inline-block;
