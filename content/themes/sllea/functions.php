@@ -25,7 +25,7 @@
 	//* Display a custom favicon
 	add_filter( 'genesis_pre_load_favicon', 'sp_favicon_filter' );
 	function sp_favicon_filter( $favicon_url ) {
-		return 'http://sllea.local:8888/wp-content/themes/sllea/images/logoSLLEA.png';
+		return CHILD_URL .'/images/logoSLLEA.png';
 	}
 
 	function register_custom_scripts() {

@@ -16,7 +16,7 @@
 			$args = (array)$args;
 			if ( 'secondary' !== $args['theme_location'] )
 				return $menu;
-			$nav_link = '<li id="header-donate_link" class= "menu-item donate-link small"><a title="donate-page" href= "http://sllea.local:8888/?page_id=20">Donate</a></li>';
+			$nav_link = '<li id="header-donate_link" class= "menu-item donate-link small"><a title="donate-page" href= "'. WP_SITEURL .'/donate/">Donate</a></li>';
 			return $menu . $nav_link;
 		}
 	}
@@ -48,7 +48,7 @@
 							genesis_do_nav();
 						echo '</div>';
 						echo '<div id= "header-donate" class= "donate-link small hide">
-								<a title="donate-page" href= "http://sllea.local:8888/?page_id=20">Donate</a>
+								<a title="donate-page" href= "'. WP_SITEURL.'/donate">Donate</a>
 							</div>';
 					}else{
 						echo '<div id= "header-primary-nav" class = "header-nav-area">';
@@ -56,7 +56,7 @@
 							genesis_do_nav();
 						echo '</div>';
 						echo '<div id= "header-donate" class= "donate-link small">
-								<a title="donate-page" href= "http://sllea.local:8888/?page_id=20">Donate</a>
+								<a title="donate-page" href= "'. WP_SITEURL . '/donate">Donate</a>
 							</div>';
 					}
 				?>

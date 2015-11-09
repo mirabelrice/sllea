@@ -24,8 +24,8 @@
 						<input type="hidden" name="currency_code" value="USD">
 						<input type="hidden" name="no_shipping" value="0">
 						<input type="hidden" name="no_note" value="1">
-						<input type="hidden" name="return" value="http://sllea.local:8888/?page_id=20">
-						<input type="hidden" name="cancel_return" value="http://sllea.local:8888/?page_id=20">
+						<input type="hidden" name="return" value="<?php echo WP_SITEURL; ?>/donate">
+						<input type="hidden" name="cancel_return" value="<?php echo WP_SITEURL; ?>/donate">
 						<input type="hidden" name="first_name" value="">
 						<input type="hidden" name="last_name" value="">
 						

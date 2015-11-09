@@ -936,7 +936,7 @@ th {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background:url('http://sllea.local:8888/wp-content/themes/sllea/images/boys_porch_bw.jpg') fixed no-repeat center;
+	background:url('images/boys_porch_bw.jpg') fixed no-repeat center;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -1041,7 +1041,7 @@ th {
 	position:absolute;
 	height:100%;
 	width:100%;
-	background:url('http://sllea.local:8888/wp-content/themes/sllea/images/ipad-porch-big.jpg') no-repeat fixed;
+	background:url('images/ipad-porch-big.jpg') no-repeat fixed;
 	background-size: cover;
 	-webkit-filter: blur(3px);
 	-moz-filter: blur(3px);
