@@ -13,8 +13,9 @@ jQuery(document).ready(function($) {
 
 	var browser = $(window),
 		header = $(".site-header"),
-		headerNav = $("#header-primary-nav"),
-		headerDonate = $("#header-donate"),
+		//headerNav = $("#header-primary-nav"),
+		//headerDonate = $("#header-donate"),
+		headerRow = $(".site-header .header-row.right"),
         atTop = true,
         headerOffset = 150,
         scrollTimer,
@@ -97,7 +98,6 @@ jQuery(document).ready(function($) {
 		if(windowHeight >= 768) {
 			landingPage.css('height', windowHeight);
 		}
-		
 		playerWindow.height(windowHeight);
 		playerWindow.width(windowWidth);
 	}
@@ -106,15 +106,17 @@ jQuery(document).ready(function($) {
         if($(this).width() > 960) {
     	    if( atTop && $(document).scrollTop() >= headerOffset){
                 header.removeClass('landing');
-                headerNav.removeClass('hide');
-                headerDonate.removeClass('hide');
+                headerRow.removeClass('hide');
+               // headerNav.removeClass('hide');
+               // headerDonate.removeClass('hide');
     	   }else{
     	   		clearTimeout(scrollTimer);
             	scrollTimer = setTimeout(function(){  		
             		if($(document).scrollTop() === 0) {
             			header.addClass('landing');
-            			headerNav.addClass('hide');
-                		headerDonate.addClass('hide');
+            			headerRow.addClass('hide');
+            			//headerNav.addClass('hide');
+                		//headerDonate.addClass('hide');
                         atTop = true;
             		}
             	}, 200);
@@ -159,7 +161,6 @@ jQuery(document).ready(function($) {
 		playerWindow.dialog("open");
 		player.api("play");
 		closeWindowVisible = true;
-		$('video').on("mousemove", mouseActive);
 	});
 
 	closeWindow.on("click", onFinish);
@@ -170,13 +171,5 @@ jQuery(document).ready(function($) {
 		//$(document).off("mousemove");
 	}
 	//$(document).on("mousemove", mouseActive);
-	function mouseActive(){
-		console.log("watching mouse");
-		clearTimeout(mouseMoveTimeout);
-		closeWindow.fadeIn();
-		mouseMoveTimeout = setTimeout(function() {
-			closeWindow.fadeOut();
-		}, 2000);
-	}
 
 });
