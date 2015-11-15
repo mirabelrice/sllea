@@ -30,7 +30,7 @@
 
 	function register_custom_scripts() {
 		if(!is_admin()) {
-			wp_register_script('sllea-landing', get_stylesheet_directory_uri().'/lib/js/sllea-landing-page.js', array( 'jquery', 'froogaloop' ), '1.0.0', true );
+			wp_register_script('sllea-landing', get_stylesheet_directory_uri().'/lib/js/sllea-landing-page.js', array( 'jquery', 'froogaloop' ), '1.0.0', false );
 			wp_register_script('sllea-header', get_stylesheet_directory_uri().'/lib/js/sllea-header-functions.js', array( 'jquery' ), '1.0.0', true );
 			//wp_register_script('froogaloop',"https://f.vimeocdn.com/js/froogaloop2.min.js");
 			wp_register_script( 'fact_slideshow_admin', get_stylesheet_directory_uri().'/lib/js/fact-slideshow.js', array('jquery', 'media-upload', 'media-views' ), true );

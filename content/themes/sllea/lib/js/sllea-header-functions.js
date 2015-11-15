@@ -27,7 +27,6 @@ jQuery(document).ready(function($){
     function updateScreenDim() {
         if((win.width() > 960) && menuOpen) {
             slideMenu.removeClass("menu-open");
-            fullNav = true;
             menuOpen = false;
         }
         if(windowHeight != win.height()){
