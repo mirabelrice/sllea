@@ -1,9 +1,7 @@
 /*
-Theme Name: sslea
-Description: child theme of genesis by StudioPress
+Theme Name: sllea
+Description: Theme for SLLEA Organization
 Author: Mirabel Rice 
-Tags: black, orange, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready  
-template: genesis
 */
 
 
@@ -26,15 +24,11 @@ template: genesis
 	- Column Classes
 - Common Classes
 	- Avatar
-	- Genesis
 	- Search Form
 	- Titles
 	- WordPress
 - Widgets
 	- Featured Content
-- Plugins
-	- Genesis eNews Extended
-	- Jetpack
 - Site Header
 	- Title Area
 	- Widget Area
@@ -1275,7 +1269,7 @@ iframe {
 		border: none;
 		line-height: .8;
 	}
-	.nav-primary,
+	#navigation_menu,
 	.site-header .social-icons-list,
 	#header-column.lower,
 	#header-donate,
@@ -1298,7 +1292,7 @@ iframe {
 	.site-header .search-f {
 		float: none; 
 	}
-	.genesis-nav-menu,
+
 	.site-description,
 	.site-header .title-area,
 	.site-header .search-form,
@@ -1490,7 +1484,7 @@ and (orientation : portrait) {
 
 /* iPHONE 5*/
 @media only screen 
-and (min-device-width : 320px) 
+and (min-device-width : 320px)
 and (max-device-width : 568px) { 
 	#landing-content h1 {
 		font-size: 30px;
@@ -1574,7 +1568,7 @@ and (max-device-width : 568px) {
 		display:-webkit-flex;
 		-webkit-flex-direction: column;
 		-webkit-align-items: center;
-		
+
 		/* Spec - Firefox, Chrome, Opera */
 		display: flex;
 		flex-direction: column;
@@ -1607,4 +1601,3 @@ and (max-device-width : 568px) {
 
 	}
 }
-
