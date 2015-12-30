@@ -1,5 +1,12 @@
-h3 {
-	margin: 0;
+h2.name {
+	margin-top: 0;
+}
+
+h3.position {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 300;
+	text-align: left;
 }
 
 .member-text-area h2 {
@@ -8,26 +15,66 @@ h3 {
 }
 
 .main-content .wrap {
-	padding: 70px 100px;
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap:  wrap;
+
+	max-width: none;
+	padding: 3%;
 }
+
 .site-container {
 	background-color: #f2f2f3;
 }
+
 .team-member {
-	margin-top: 45px;
-	overflow: hidden;
-}
-#board-bios {
-	margin-top: 40px;
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+
+    align-items: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+
+    max-height: 600px;
+    margin: 0 16px 32px 16px;
 }
 
-.bio-section {
-	padding: 30px 70px;
-	margin-bottom: 50px;
-	box-shadow: 1px 1px 4px 1px #E0E0E0;
-	border-radius: 15px;
-	overflow: hidden;
-	background-color: #ffffff;
+.team-member .member-image-area,
+.team-member.reversed .member-photo {
+	order: 1;
+	-webkit-order: 1;
+    -ms-flex-order: 1;
+}
+
+.team-member.reversed .member-text-area {
+	order: 2;
+	-webkit-order: 2;
+    -ms-flex-order: 2;
+}
+
+.member-text-area {
+	margin-top: 32px;
+}
+
+.member-text-area p {
+	text-align: left
 }
 
 .member-column {
@@ -37,32 +84,87 @@ h3 {
 
 .member-text-area {
 	display: inline-block;
-	width:70%;
 }
 
 .member-image-area {
 	display: inline-block;
-	width: 25%;
 	height: 200px;
 	float:left;
 	margin-right: 5%;
 }
 
-.member-image-area img {
-	width: 100%;
-	height: 100%;
+img.member-photo {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
 }
 
-@media only screen and (max-width: 960px) {
-	.member-image-area {
-		height: 150px;
-		width: 35%;
+@media only screen and (min-width: 960px) {
+	h3.position {
+		font-size: 18px;
+		line-height: 24px;
 	}
-	.member-text-area {
+
+	.main-content .wrap {
 		display: block;
-		width: auto;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 5%;
+	}
+
+	.team-member {
+		flex-direction: row;
+    	-webkit-flex-direction: row;
+    	-ms-flex-direction: row;
+
+    	max-height: 200px;
+    	margin: 0 16px 32px 16px;
+	}
+
+	.team-member.reversed h3.position,
+	.team-member.reversed h2.name {
+		text-align: right;
+	}
+
+	.team-member.reversed {
+		justify-content: flex-end;
+   		-webkit-justify-content: flex-end;
+    	-ms-flex-pack: flex-end;
+	}
+
+	.team-member .member-photo {
+		order: 1;
+		-webkit-order: 1;
+	    -ms-flex-order: 1;
+	}
+
+	.team-member.reversed .member-text-area {
+		order: 1;
+		-webkit-order: 1;
+	    -ms-flex-order: 1;
+
+	    padding-right: 32px;
+	}
+
+	.team-member.reversed .member-photo {
+		order: 2;
+		-webkit-order: 2;
+   		-ms-flex-order: 2;
+   	}
+
+	.team-member .member-text-area {
+		order: 2;
+		-webkit-order: 2;
+   		-ms-flex-order: 2;
+
+		-webkit-flex: 2;
+    	-ms-flex: 2;
+    	flex: 2;
+
+    	padding-left: 32px;
 	}
 }
+
 @media only screen and (max-width: 800px) {
 	.member-text-area p {
 		font-size: 12px;

@@ -22,7 +22,7 @@
 			wp_register_script( 'fact_slideshow_admin', get_template_directory_uri().'/lib/js/fact-slideshow.js', array('jquery', 'media-upload', 'media-views' ), true );
 			wp_register_script('sllea-mail-signup',get_template_directory_uri().'/lib/js/sllea-mail-signup.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('donate-page',get_template_directory_uri().'/lib/js/donate-page.js', array( 'jquery' ), '1.0.0', true );
-			wp_register_script('sllea-general',get_template_directory_uri().'/lib/js/general-functions.js', array( 'jquery' ), '1.0.0', true );
+			wp_register_script('sllea-functions',get_template_directory_uri().'/lib/js/functions.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('sllea-application',get_template_directory_uri().'/lib/js/sllea-application.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('sllea-our-model',get_template_directory_uri().'/lib/js/our-model-functions.js', array( 'jquery' ), '1.0.0', true );
 		}
@@ -34,13 +34,16 @@
 		wp_enqueue_style("wp-jquery-ui-dialog");
 		wp_enqueue_script('sllea-header');
 		wp_enqueue_style('main-stylesheet');
+		wp_enqueue_style('fact-stylesheet');
+		wp_enqueue_script('sllea-functions');
+		
 
 		//home page
 		if(is_front_page()) {
-			wp_enqueue_script('froogaloop');
 			wp_enqueue_script('sllea-landing');
 			wp_enqueue_script( 'sllea-mail-signup');
 			wp_enqueue_script('fact_slideshow_admin');
+			wp_enqueue_style( 'fact-stylesheet', get_template_directory_uri() . '/fact-slideshow-style.css' );
 		}
 		//donate page
 		if( is_page('donate') ){
@@ -50,7 +53,6 @@
 
 		//contact page
 		if( is_page('contact') ){
-			wp_enqueue_script('sllea-general');
 			wp_dequeue_script('fact_slideshow_admin');
 			//wp_dequeue_script('froogaloop');
 			wp_enqueue_style( 'custom-stylesheet', get_template_directory_uri() . '/sllea-our-team-page.css' );
@@ -85,7 +87,7 @@
 	add_action( 'after_setup_theme', 'register_menus' );
 	function register_menus() {
 	  register_nav_menu( 'sllea-slide-menu', __( 'Slide Menu', 'sllea' ) );
-	  register_nav_menu( 'primary', __( 'Primary Navigation Menu', 'sllea' ) );
+	  register_nav_menu( 'primary-menu', __( 'Primary Navigation Menu', 'sllea' ) );
 	}
 
 	//cleanup client backend
@@ -165,6 +167,16 @@
 		}
 	}
 
+	function trim_text($text, $max_length) {
+		$trimmed_text = $text;
+		$length_original = strlen($text);
+		if( $length_original > $max_length) {
+			$offset = ($max_length - 3) - $length_original;
+			$trimmed_text = substr($text, 0, strrpos($text, ' ', $offset)) . '...';
+		}
+		return $trimmed_text;
+	}
+	require get_stylesheet_directory() .'/templates/includes/helpers.php';
 	require get_stylesheet_directory() .'/includes/team-cpt.php';
 	require get_stylesheet_directory() .'/fact-slideshow-template.php';
 	require get_stylesheet_directory() .'/fact-slideshow-cpt.php';

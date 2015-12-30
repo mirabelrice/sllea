@@ -9,8 +9,8 @@ h1 {
 .text-field{
 	text-align: left;
 }
-.history.main-content {
-	margin-top: 580px;
+.content.history {
+	top: 580px;
 }
 .main-content .wrap {
 	padding: 0;
