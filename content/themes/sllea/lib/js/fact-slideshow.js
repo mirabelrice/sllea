@@ -36,7 +36,7 @@ jQuery(document).ready( function($) {
 		slideShowStarted = isVisible = true;
 		slideShowInterval = setInterval(function() {
 			globalProm = animateSlides(getTarget("next"));
-		}, transitionSpeed);	
+		}, transitionSpeed);
 	}
 	function getTarget(dir) {
 		if (dir === "next") {
@@ -183,7 +183,7 @@ jQuery(document).ready( function($) {
     		slideWidth = newWidth;	
 		}
     }
-
+/*
     $(window).scroll(function() {
     	console.log("scrolling");
     	clearTimeout(scrollTimer);
@@ -200,7 +200,7 @@ jQuery(document).ready( function($) {
 	    				console.log("waiting until finished...");
 	    				slideShowLoop();
 	    			});
-*/
+
     			}	
 	    	}else{
 	    		console.log("scrolled out of view");
@@ -210,7 +210,7 @@ jQuery(document).ready( function($) {
 	    	}
     	}, 500);
     });
-
+*/
     function isSlideShowInView() {
     	var docViewTop = $(window).scrollTop(),
         	docViewBottom = docViewTop + $(window).height(),

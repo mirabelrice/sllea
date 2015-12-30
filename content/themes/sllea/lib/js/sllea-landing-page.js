@@ -13,52 +13,37 @@ jQuery(document).ready(function($) {
 
 	var browser = $(window),
 		header = $(".site-header"),
-		//headerNav = $("#header-primary-nav"),
-		//headerDonate = $("#header-donate"),
-		headerRow = $(".site-header .header-row.right"),
+		headerNav = $("#header-primary-nav"),
         atTop = true,
         headerOffset = 150,
         scrollTimer,
-        mouseMoveTimeout,
-		videoLink = $('#video-link'),
-		videoContainer = $('#video-container'),
-		iframe = videoContainer.find('iframe'),
-		closeWindow = $("#close-window"),
-		player = $f(iframe[0]),
 		offset = $('body').scrollTop(),
 		windowWidth = browser.width(),
 		landingPage = $("#site-landing"),
-		logo = $('#landing-content .logo'),
+		headerLogoText = $("#header-logo .text"),
+
 		initiativeBlocks = $("#initiative-block").children(".initiative-column"),
-		scrollMagicController = new ScrollMagic.Controller(),
-		closeWindowVisible = false;
-
-	videoLink.show().css("display", "block");
-	var	playerWindow = $("#trailer-window").dialog({
-				'dialogClass'   : 'wp-dialog',           
-        		'modal'         : true,
-        		'draggable'     : false,
-        		'resizable'     : false,
-       			'autoOpen'      : false, 
-        		'closeOnEscape' : true,  
-        		'width'         : windowWidth,
-        		'height'        : windowHeight,
-        		close        	: function(event, ui) {
-
-        			player.api("pause");
-        		 }
-	});
+		scrollMagicController = new ScrollMagic.Controller();
 	updateDim();
 
+	$("#mission-statement").html(function(index, html){
+		return html.replace(/(The mission of SLLEA )/g,'<span class= "emphasized-word">$1</span>')
+
+	});
+
+	 if($(this).width() < 960) {
+	 	headerLogoText.removeClass('landing');
+	 }
+/*
 	//search for key words in mission statement and bold/color them
 	$("#mission-statement").html(function(index, html){
 		return html.replace(/(SLLEA)/g,'<span class= "emphasized-word">$1</span>')
-					.replace(/( Autism Spectrum Disorder)/,'<span class= "emphasized-word">$1</span>')
+					.replace(/(The mission of SLLEA)/,'<span class= "emphasized-word">$1</span>')
 					.replace(/(specialized)/g,'<span class= "emphasized-word">$1</span>')
 					.replace(/(support)/g,'<span class= "emphasized-word">$1</span>')
 					.replace(/(global)/g,'<span class= "emphasized-word">$1</span>');
 	});
-	
+*/
 	/* SCROLL MAGIC SCENES */
 	//mission statement text
 	/*
@@ -98,25 +83,21 @@ jQuery(document).ready(function($) {
 		if(windowHeight >= 768) {
 			landingPage.css('height', windowHeight);
 		}
-		playerWindow.height(windowHeight);
-		playerWindow.width(windowWidth);
 	}
 
     browser.scroll(function() {
         if($(this).width() > 960) {
     	    if( atTop && $(document).scrollTop() >= headerOffset){
                 header.removeClass('landing');
-                headerRow.removeClass('hide');
-               // headerNav.removeClass('hide');
-               // headerDonate.removeClass('hide');
+                headerNav.removeClass('hide');
+                headerLogoText.removeClass('landing');
     	   }else{
     	   		clearTimeout(scrollTimer);
-            	scrollTimer = setTimeout(function(){  		
+            	scrollTimer = setTimeout(function(){
             		if($(document).scrollTop() === 0) {
             			header.addClass('landing');
-            			headerRow.addClass('hide');
-            			//headerNav.addClass('hide');
-                		//headerDonate.addClass('hide');
+            			headerNav.addClass('hide');
+            			headerLogoText.addClass('landing');
                         atTop = true;
             		}
             	}, 200);
@@ -134,7 +115,7 @@ jQuery(document).ready(function($) {
     			windowWidth = newWidth;
     			updateDim();
     		}
-    	}, 1000); 	
+    	}, 1000);
     });
 
 
@@ -150,26 +131,4 @@ jQuery(document).ready(function($) {
 	      }
 	    }
  	});
-
- 	/*VIDEO PLAYER*/
- 	player.addEvent('ready', readyFunction);
- 	function readyFunction() {
-		player.addEvent('finish', onFinish);
-	}
-
-	videoLink.on('click', function(){
-		playerWindow.dialog("open");
-		player.api("play");
-		closeWindowVisible = true;
-	});
-
-	closeWindow.on("click", onFinish);
-
-	function onFinish() {
-		playerWindow.dialog("close");
-		player.api("pause");
-		//$(document).off("mousemove");
-	}
-	//$(document).on("mousemove", mouseActive);
-
 });

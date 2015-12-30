@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<main>
-		<div class = "wrap">
-			<div class= "donate main-content">
+		<div class= "donate main-content">
+			<div class = "page-wrap">
 				<form id= "sllea-make-donation" target= "paypal" action="https://www.paypal.com/cgi-bin/webscr" method= "POST">
 					<input type="hidden" name="cmd" value="_donations">
 					<input type="hidden" name="business" value="paypal@sllea.org">
@@ -50,7 +50,6 @@
 								<i class="fa fa-usd"></i>
 								<div id= "donate-amount" class= "required">
 									<input id= "entered-donate-amount" class= "donate-entry" type="number" name= "donation" min="0" step="1" pattern="[0-9]*" value="10">
-									<span class= "per-month-selected">/mo</span>
 									<span id= "currency">USD</span>
 								</div>
 							</div>
@@ -87,7 +86,6 @@
 										<p>Amount:</p>
 										<div id= "amount-due">
 											<span id="final-donation-amount">$10.00</span>
-											<span class= "per-month-selected">/mo</span>
 										</div>
 									</div>
 									<div class= "payment-bottom donate-link medium">

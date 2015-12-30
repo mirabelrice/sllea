@@ -6,7 +6,7 @@
 			$background_image_id = get_field("background_image", 192);
 			//$background_image = wp_get_attachment_image_src($background_image_id);
 			$num_slides = count($slides);
-			echo '<div class = "slide-viewport" style= "background-image:url('. $background_image_id['url'] .')">'; ?>
+			echo '<div class = "slide-viewport" >'; ?>
 				<div class= "scroller">	
 					<ul class= "slides">
 						<li class= "slide">

@@ -1,56 +1,85 @@
 
-/* # Imports
+/* # Typography
 ---------------------------------------------------------------------------------------------------- */
-
-@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
-
 body {
 	background-color:#00b3e3;
 }
 
 h1 {
-	margin-bottom: 0;
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 400;
 }
 
-.site-container {
-	position: relative;
+#donate-statement p {
+	font-size: 14px;
+	line-height: 20px;
 }
 
-.main-content {
-	background-color: #fff;
-	padding: 40px;
-}
-
-.wrap {
-	max-width: 800px;
-}
-
-fieldset h1,
-legend,
-#contributor-info > h2,
-#payment-info h2{
-	width: 100%;
+#sllea-make-donation h2 {
 	margin: 0;
-	padding: 0;
-	font-size: 22px;
+	font-size: 20px;
 	text-align: left;
 }
 
+#select-donate-amount a {
+	color: #fff;
+}
+
+#text-block {
+	margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+	h1 {
+		font-size: 32px;
+		line-height: 40px;
+	}
+
+	#sllea-make-donation h2 {
+		font-size: 24px;
+	}
+
+	#donate-statement p {
+		font-size: 16px;
+	}
+}
+
+/* # Wraps/Containers
+---------------------------------------------------------------------------------------------------- */
+.donate.main-content {
+	padding: 40px;
+}
+
+.donate.main-content .page-wrap {
+	padding: 3%;
+	background-color: #fff;
+}
 
 .fieldset-wrap {
 	padding: 30px 20px;
 	text-align: left;
 }
 
+@media only screen and (min-width: 768px) {
+	.donate.main-content .page-wrap {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+}
+
+/* # Forms
+---------------------------------------------------------------------------------------------------- */
+legend {
+	width: 100%;
+}
+
 button:focus {
 	outline: none;
 }
 
-/* # Input/Select
----------------------------------------------------------------------------------------------------- */	
-
 .donate fieldset {
-	display:inline-block;
+	display: inline-block;
 	width: 100%;
 	padding: 0;
 	border: none;
@@ -72,40 +101,6 @@ button:focus {
 	width: 30%;
 	margin-left: 20px;
 	margin-bottom: 5px;
-}
-
-#donation-frequency input {
-	width: auto;
-	height: auto;
-	padding: 0px 5px;
-}
-
-.address input,
-.city input {
-	width: 70%;
-}
-
-.state-zip input{
-	font-size: 16px;
-}
-
-#security-code input {
-	width: 80px;
-}
-
-.donate select {
-	height: 36px;
-	font-size: 16px;
-	font-weight: 300;
-	color: #7D8285;
-}
-
-#expiration-date select{
-	width: 115px;
-}
-
-#country select{
-	width: 255px;
 }
 
 ::-webkit-input-placeholder {
@@ -133,17 +128,25 @@ button:focus {
 }
 
 .donate-entry p {
-	font-size: 10px;
 	padding: 0px 5px;
-	margin:0;
+	margin-bottom: 10px;
+	font-size: 10px;
+	line-height: 16px;
 }
+
+.donate-link.large button{
+	width:200px;
+	font-size: 20px;
+}
+
+
 /* ## form errors
 ---------------------------------------------------------------------------------------------------- */
 #form-error-display {
 	display: none;
 	margin-bottom: 30px;
-	text-align: left;
 	border: 2px solid red;
+	text-align: left;
 }
 
 #form-errors > span {
@@ -180,26 +183,16 @@ select.invalid {
 p.invalid {
 	color:#FA0D1C;
 }
-/*Title/text */
-#text-block {
-	margin-bottom: 20px;
-}
 
-/* ## Donation Amount Info
+/* ## Main Donation Form
 ---------------------------------------------------------------------------------------------------- */
 #sllea-make-donation {
 	text-align: center;
 }
-#sllea-make-donation h2 {
-	margin: 0;
-}
+
 #donate-statement {
 	display: inline-block;
 	margin-bottom: 14px;
-}
-
-#donate-statement  {
-	border: none;
 }
 
 #donation-suggestions {
@@ -213,29 +206,29 @@ p.invalid {
 	flex-direction: row;
 	justify-content: center;
 
+    flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+
 	width: 100%;
 }
 
 li.donate-option {
 	display: inline-block;
-	width: 12%;
-	height: auto;
+	width: 80px;
+	height: 80px;
 	margin: 15px 2.8%;
 	background-color: #00b3e3;
 	-moz-border-radius: 50%; 
 	-webkit-border-radius: 50%; 
 	border-radius: 50%;
-	line-height: 500%;
+	line-height: 80px;
 	text-align: center;
 	cursor: pointer;
 }
 
-#select-donate-amount li:hover {
+li.donate-option:hover {
 	opacity: 0.7;
-}
-
-#select-donate-amount a {
-	color: #fff;
 }
 
 #donation-info {
@@ -246,105 +239,32 @@ li.donate-option {
 	padding-right: 20px;
 }
 
-#donation-frequency {
-	display: inline-block;
-}
-
-#donation-frequency label > input{
-	margin: 5px;
-}
-
 #donate-amount {
 	position: relative;
 	display: inline-block;
 	margin: 0;
 }
 
-.per-month-selected {
-	position: absolute;
-	display: none;
-}
-
-#donate-amount .per-month-selected {		
-	right: 70px;
-	bottom: 10px;
-}
-
-#currency {
-	color: green;
-	padding: 5px;
-}
-
-/* ## Contributor Info
----------------------------------------------------------------------------------------------------- */
-#contributor-info {
-	text-align: left;
-}
 #contributor-wrap {
 	border: 1px solid silver;
 	border-radius: 7px;
 }
 
-#contributor-info > p {
-	border: none;
+@media only screen and (min-width: 768px) {
+	li.donate-option {
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+	}
 }
 
-#contact-info label,
-#payment-info label {
-	width: 50px;
-	display: inline-block;
-	vertical-align: top;
-	margin-top: 5px;
-}
-
-
-#payment-info span {
-	width: 140px;
-}
-
-
-
-#security-code .fa {
-	color: red;
-}
-#security-code-question:hover:before{
-    border: solid;
-    border-color: #7D8285 transparent;
-    border-width: 6px 6px 0 6px;
-    bottom: 20px;
-    content: "";
-    left: 60%;
-    position: absolute;
-    z-index: 99;
-}
-
-#security-code-question:hover:after{
-  	background-color: #7D8285;
-    border-radius: 5px;
-    bottom: 26px;
-    color: #fff;
-    content: attr(title);
-    left: 20%;
-    padding: 15px 15px;
-    position: absolute;
-    z-index: 98;
-    width: 350px;
-    line-height: 1.2;
-}
-
-
-.donate-link.large button{
-	width:200px;
-	font-size: 20px;
-}
-
-.donate section {
+#payment-info section {
 	/* - Safari 6.1+. iOS 7.1+, BB10 */
 	display:-webkit-flex;
 	-webkit-flex-direction: row;
 	-webkit-justify-content: space-around;
 	-webkit-align-items: center;
-	
+
 	/* Spec - Firefox, Chrome, Opera */
 	display: flex;
 	flex-direction: row;
@@ -369,15 +289,6 @@ li.donate-option {
 	position: relative;
 }
 
-#amount-due .per-month-selected {
-	display: none;
-	bottom: 18px;
-	width: 30px;
-	right: 30px;
-	font-size: 19px;
-	color: #3E4B51;
-}
-
 #final-donation-amount {
 	font-size: 22px;
 	line-height: 22px;
@@ -388,27 +299,7 @@ li.donate-option {
 	text-align: center;
 	padding: 20px;
 }
-/* ## Contributor Info
----------------------------------------------------------------------------------------------------- */
-@media only screen and (max-width: 800px) {
-	#select-donate-amount li {
-		margin: 15px 1.8%;
-	}
-}
 
-@media only screen and (max-width: 768px) {
-	#donate-statement p {
-		font-size: 14px;
-		line-height: 20px;
-	}
-	.donate-option {
-		line-height: 400%;
-		width:10%;
-	}
-}
-@media only screen and (max-width: 568px) {
-
-}
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 568px)  {
