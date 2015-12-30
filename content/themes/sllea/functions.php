@@ -14,11 +14,9 @@
 
 	function register_custom_scripts() {
 		if(!is_admin()) {
-			wp_register_style('main-stylesheet', get_stylesheet_uri(), false); // in heade
+			wp_register_style('main-stylesheet', get_stylesheet_uri(), false); 
 			wp_register_style( 'our-model-style', get_template_directory_uri(). '/sllea-our-model-page-style.css');
 			wp_register_script('sllea-landing', get_template_directory_uri().'/lib/js/sllea-landing-page.js', array( 'jquery', 'froogaloop' ), '1.0.0', true );
-			wp_register_script('sllea-header', get_template_directory_uri().'/lib/js/sllea-header-functions.js', array( 'jquery' ), '1.0.0', true );
-			//wp_register_script('froogaloop',"https://f.vimeocdn.com/js/froogaloop2.min.js");
 			wp_register_script( 'fact_slideshow_admin', get_template_directory_uri().'/lib/js/fact-slideshow.js', array('jquery', 'media-upload', 'media-views' ), true );
 			wp_register_script('sllea-mail-signup',get_template_directory_uri().'/lib/js/sllea-mail-signup.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('donate-page',get_template_directory_uri().'/lib/js/donate-page.js', array( 'jquery' ), '1.0.0', true );
@@ -32,11 +30,9 @@
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script('jquery-ui-dialog');
 		wp_enqueue_style("wp-jquery-ui-dialog");
-		wp_enqueue_script('sllea-header');
 		wp_enqueue_style('main-stylesheet');
 		wp_enqueue_style('fact-stylesheet');
 		wp_enqueue_script('sllea-functions');
-		
 
 		//home page
 		if(is_front_page()) {

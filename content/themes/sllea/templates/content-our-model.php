@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+<main class="content our-model">
 	<?php if( have_rows('our_model_image_text_block') ){ ?>
 		<?php $row_num = 0;
 			while ( have_rows('our_model_image_text_block') ) : the_row();
@@ -27,8 +29,11 @@
 						</div>
 					</div>
 				</div>
+				<
 
 		<?php $row_num += 1;
 			endwhile;
 		} ?>
+</main>
+
 <?php get_footer(); ?>

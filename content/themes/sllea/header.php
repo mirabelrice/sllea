@@ -49,6 +49,7 @@
 					<div id="header-donate" class= "donate-link small header-column">
 						<a title="donate-page" href= "<?php echo $donate_url; ?>">Donate</a>
 					</div>
+					<div id="menu-toggle"><a><span class= "icon ion-android-menu"></span></a></div>
 				</div>
 			</div>
 		</div>

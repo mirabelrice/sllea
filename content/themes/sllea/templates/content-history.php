@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+<main class="content history">
 	<div class= "wrap">
 		<h1>History</h1>
 		<div class= "text-image-fields">
@@ -38,4 +40,5 @@
 			} ?>
 		</div>
 	</div>
-<?php get_footer(); ?>
+	<?php get_footer(); ?>
+</main>
