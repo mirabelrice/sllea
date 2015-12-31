@@ -4,10 +4,20 @@
 	*/
 	$logo_url = get_stylesheet_directory_uri() .'/images/mirbz.png';
 	$donate_url = get_bloginfo('url'). '/donate';
+	$header_classes = "site-header";
+	$nav_classes = "header-column";
 	$is_landing = is_front_page();
-	$header_classes = $is_landing ? "site-header landing" : "site-header";
-	$nav_classes = $is_landing? "header-column hide" : "header-column";
 	$page_title = $is_landing? '&nbsp;SLLEA' : '&nbsp;SLLEA' . '&nbsp;&#124;&nbsp;' . get_the_title();
+	$logo_text_classes = "logo-column text";
+	$menu_toggle_classes = '';
+
+	if($is_landing) {
+		$header_classes .= " landing";
+		$nav_classes .= " hide";
+		$menu_toggle_classes .= " landing";
+		$logo_text_classes .= " landing";
+	}
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -37,7 +47,7 @@
 						<div id="header-logo">
 							<a class="logo-link" href= "<?php bloginfo('url'); ?>">
 								<img class="logo-column image" src="<?php echo $logo_url; ?>"/>
-								<p class="logo-column text landing">SLLEA</p>
+								<p class="<?php echo $logo_text_classes; ?>">SLLEA</p>
 							</a>
 						</div>
 					</div>
@@ -49,7 +59,7 @@
 					<div id="header-donate" class= "donate-link small header-column">
 						<a title="donate-page" href= "<?php echo $donate_url; ?>">Donate</a>
 					</div>
-					<div id="menu-toggle"><a><span class= "icon ion-android-menu"></span></a></div>
+					<div id="menu-toggle" class="<?php echo $menu_toggle_classes ?>"><a><span class= "icon ion-android-menu"></span></a></div>
 				</div>
 			</div>
 		</div>

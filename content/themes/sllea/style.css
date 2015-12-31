@@ -154,12 +154,11 @@ html {
 }
 
 
-a,
-button,
-div,
-span,
-li,
-.gallery img {
+a:hover,
+button:hover,
+div:hover,
+span:hover,
+li:hover {
 	-webkit-transition: all 0.25s ease;
 	-moz-transition:    all 0.25s ease;
 	-ms-transition:     all 0.25s ease;
@@ -431,7 +430,7 @@ th {
 	position: fixed;
 	height: 100%;
 	width:100%;
-	background-color: #00b3e3;
+	background-color: #333;
 	z-index: 1000;
 }
 
@@ -623,6 +622,10 @@ main.content{
     transition: background-color .5s;
 }
 
+.site-header.landing {
+	background-color: transparent;
+}
+
 .site-header .header-column {
 	display: inline-block;
 }
@@ -719,7 +722,7 @@ main.content{
 @media only screen and (min-width: 960px) {
 
 	.site-header.landing {
-		background-color: transparent;
+		
 		box-shadow: 0 0 0 0 transparent;
 	}
 
@@ -769,6 +772,10 @@ main.content{
 	color: #8e8e93;
 	cursor: pointer;
 	z-index: 999999;
+}
+
+#menu-toggle.landing a {
+	color: #fff;
 }
 
 #menu-toggle .icon {
@@ -955,6 +962,10 @@ main.content{
 		padding-top: 0;
 		padding-bottom: 0;
 	}
+
+	#impact .overlay {
+		background-size: cover;
+	}
 }
 
 #impact {
@@ -969,8 +980,8 @@ main.content{
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background:url('images/boys_porch_bw.jpg') fixed no-repeat center;
-	background-size: cover;
+	background:url('images/boys_porch_bw.jpg') no-repeat center;
+	background-size: 800px 400px;
 	background-repeat: no-repeat;
 }
 
@@ -996,7 +1007,6 @@ main.content{
 }
 #impact-2 {
 	position: relative;
-	height: 450px;
 	width: 100%;
 	padding: 0;
 }
@@ -1390,120 +1400,6 @@ main.content{
 
 	.content-column {
 		padding: 0;
-	}
-}
-
-/*iPad*/
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) { 
-	h1 {
-		font-size: 24px;
-		line-height: 24px;
-
-	}
-	#site-landing .logo {
-		top: 300px;
-	}
-	#landing-content {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		padding-top: 200px
-	}
-	#video-link {
-		margin-top: 50px;
-	}
-}
-
-/* iPHONE 5*/
-@media only screen 
-and (min-device-width : 320px)
-and (max-device-width : 568px) { 
-	#landing-content h1 {
-		font-size: 30px;
-	}
-	p {
-		line-height: 1;
-		font-size: 14px;
-	}
-	h2 {
-		font-size: 20px
-	}
-
-	#menu-toggle {
-		height: 31px;
-		padding: 8.5px 7px;
-	}
-
-	#mission-statement p{
-		padding: 0;
-		margin-bottom: 0;
-		font-size: 15px;
-		line-height: 1.1;
-	}
-
-	#initiative-block {
-		padding: 0;
-	}
-
-	.initiative-column.center {
-		margin: 0;
-	}
-
-	.initiative-column .initiative-image img{
-		height: 120px;
-		width: 120px;
-	}
-
-	.initiative-column .initiative-image{
-		padding: 0;
-		margin: 0;
-	}
-		
-	.initiative-column .initiative-text,
-	.initiative-column .initiative-text h2 {
-		text-align: center;
-	}
-
-	.initiative-column .initiative-text p {
-		line-height: 1.1;
-	}
-
-	.donate-link.large a{
-		width: 200px;
-	}
-
-	.donate-link.large {
-		bottom: 10%;
-	}
-
-	.site-footer .footer-section.footer-left {
-		display: none;
-	}
-
-	.site-footer .logo-wrap {
-		height: 150px;
-		width: 150px;
-	}
-	.site-footer ul.social-icons-list {
-		font-size: 10px;
-	}
-
-	.site-footer  .social-icons-list li {
-		padding: 0;
-	}
-
-	.site-footer  .footer-section {
-		width: 100%;
-		padding: 10px 0;
-		text-align: center;
-		font-size: 14px;
-		letter-spacing: 0;
-
 	}
 }
 
