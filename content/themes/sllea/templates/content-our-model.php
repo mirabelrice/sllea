@@ -1,6 +1,4 @@
-<?php get_header(); ?>
-
-<main class="content our-model">
+<main id="our-model" class="content">
 	<?php if( have_rows('our_model_image_text_block') ){ ?>
 		<?php $row_num = 0;
 			while ( have_rows('our_model_image_text_block') ) : the_row();
@@ -35,5 +33,3 @@
 			endwhile;
 		} ?>
 </main>
-
-<?php get_footer(); ?>

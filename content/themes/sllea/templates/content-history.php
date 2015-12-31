@@ -1,44 +1,17 @@
-<?php get_header(); ?>
+<?php
+	$background_image = get_field("background_image");
+	if(!$background_image){ $background_image = get_stylesheet_directory_uri() .'/images/sitting-around-table.jpg'; }
+	$text = get_field("text");
+?>
 
 <main class="content history">
-	<div class= "wrap">
-		<h1>History</h1>
-		<div class= "text-image-fields">
-			<?php if( have_rows('text_image_block') ){
-				while ( have_rows('text_image_block') ) : the_row();
-					$images = get_sub_field('images');
-					$text = get_sub_field('text_area');
-
-					echo '<div class= "text-image-block">';
-						if($images) {
-					 		$num_images = count($images);
-
-							if($num_images == 1){
-								?>
-									<div class= "image-field single"><img src=  "<?php echo $images[0]['url']; ?>"/></div>
-								<?php
-							}elseif($num_images == 2){
-								echo '<div class="double-image-container">';
-								foreach($images as $sub_image) { ?>
-									<div class="image-field double"><img src= "<?php echo $sub_image['url']; ?>" /></div>
-								<?php }
-								echo '</div>';	
-							}else {
-								return;
-							}
-						}
-
-						if($text) { ?>
-							<div class= "fluid-container">
-								<div class= "text-field">
-									<?php echo $text ?>
-								</div>
-							</div>
-						<?php }
-					echo '</div>';
-				endwhile;
-			} ?>
+	<div id= "landing" class="page-landing-image">
+		<div class="image" style="background-image: url('<?php echo $background_image; ?>');"></div>
+	</div>
+	<div class="page-wrap landing" >
+		<div class="entry-content">
+			<h1>History</h1>
+			<?php echo $text; ?>
 		</div>
 	</div>
-	<?php get_footer(); ?>
 </main>
