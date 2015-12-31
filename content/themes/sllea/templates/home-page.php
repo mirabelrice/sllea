@@ -2,8 +2,10 @@
 /*
  * Template for sllea home page
 */
+$image_url = get_stylesheet_directory_uri() .'/images/boys_porch_bw.jpg';
 ?>
 <?php get_header(); ?>
+<span id="homepage-mark" style="display: none"></span>
 <main id= "home" class="content">
 	<?php get_template_part('templates/includes/landing') ?>
 	<div id= "mission-statement" class= "content-block">
