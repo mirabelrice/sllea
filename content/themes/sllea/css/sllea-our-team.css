@@ -1,3 +1,7 @@
+h1 {
+	padding-left: 32px;
+}
+
 h2.name {
 	margin-top: 0;
 }
@@ -14,7 +18,7 @@ h3.position {
 	color: #00b3e3;
 }
 
-.main-content .wrap {
+.content .inner-wrap {
 	display: flex;
 	display: -ms-flexbox;
     display: -webkit-flex;
@@ -28,7 +32,7 @@ h3.position {
     -ms-flex-wrap:  wrap;
 
 	max-width: none;
-	padding: 3%;
+	padding: 32px 5% 0;
 }
 
 .site-container {
@@ -105,11 +109,11 @@ img.member-photo {
 		line-height: 24px;
 	}
 
-	.main-content .wrap {
+	.content .inner-wrap {
 		display: block;
 		max-width: 960px;
 		margin: 0 auto;
-		padding: 5%;
+		padding: 32px 0 0;
 	}
 
 	.team-member {

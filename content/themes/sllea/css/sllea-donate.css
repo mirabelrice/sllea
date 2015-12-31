@@ -12,7 +12,6 @@ h1 {
 }
 
 #donate-statement p {
-	font-size: 14px;
 	line-height: 20px;
 }
 
@@ -47,11 +46,11 @@ h1 {
 
 /* # Wraps/Containers
 ---------------------------------------------------------------------------------------------------- */
-.donate.main-content {
+#donate .page-wrap {
 	padding: 40px;
 }
 
-.donate.main-content .page-wrap {
+#donate .inner-wrap {
 	padding: 3%;
 	background-color: #fff;
 }
@@ -62,7 +61,7 @@ h1 {
 }
 
 @media only screen and (min-width: 768px) {
-	.donate.main-content .page-wrap {
+	#donate .inner-wrap {
 		max-width: 960px;
 		margin: 0 auto;
 	}
@@ -74,19 +73,15 @@ legend {
 	width: 100%;
 }
 
-button:focus {
-	outline: none;
-}
-
-.donate fieldset {
+fieldset {
 	display: inline-block;
 	width: 100%;
 	padding: 0;
 	border: none;
 }
 
-.donate input,
-.donate select {
+input,
+select {
 	height: 36px;
 	padding: 5px 9px;
 	border-radius: 7px;	
@@ -321,7 +316,7 @@ and (max-device-width : 568px)  {
 		font-size: 10px;
 	}
 
-	.donate.main-content {
+	#donate .page-wrap {
 		padding: 20px 0;
 	}
 
