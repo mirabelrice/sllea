@@ -129,6 +129,10 @@ input[type="search"] {
 
 /* ## Typographical Elements
 --------------------------------------------- */
+html,
+body {
+	height:100%;
+}
 
 body {
 	font-family: proxima-nova, sans-serif;
@@ -138,16 +142,13 @@ body {
 	line-height: 20px;
 	color: #646568;
 	margin: 0;
-	height:100%;
 	width:100%;
     overflow:auto;
 }
-
-main.content,
-html {
+.body-wrap {
 	min-height: 100%;
+	position: relative;
 }
-
 .site-container {
 	position: relative;
 	overflow-x: hidden;
@@ -447,6 +448,7 @@ th {
 main.content{
 	position: relative;
 	top: 80px;
+	padding-bottom: 164px;
 	clear: both;
 }
 #home.content {
@@ -510,6 +512,12 @@ main.content{
 		vertical-align: middle;
 	}
 
+}
+
+@media only screen and (min-width: 768px) {
+	main.content{
+		padding-bottom: 100px;
+	}
 }
 
 /* ### Content */
@@ -1242,8 +1250,11 @@ main.content{
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-	position: relative;
-	padding: 24px 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 164px;
     background-color: #333;
 }
 
@@ -1252,11 +1263,11 @@ main.content{
 }
 
 .site-footer .content-wrap {
-	height: 100px;
+	height: 164px;
 }
 
 .site-footer .content-inner {
-	padding: 0 6% 24px;
+	padding: 0 6%;
 }
 .site-footer .inner-row {
 	display: table;
@@ -1354,8 +1365,14 @@ main.content{
 
 @media only screen and (min-width: 768px) {
 	.site-footer {
+		height: 100px;
 		padding: 0;
 	}
+
+	.site-footer .content-wrap {
+		height: 100px;
+	}
+
 	.site-footer .content-inner {
 		padding: 0 6%;
 	}
@@ -1446,6 +1463,33 @@ main.content{
 	margin-right: 10px;
 }
 
+/* # 404 Page
+---------------------------------------------------------------------------------------------------- */
+main#not-found .error-msg {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 16px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+main#not-found .error-column {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+main#not-found .error-column h1 {
+	margin: 0;
+}
+
+main#not-found .error-column p {
+	font-size: 16px;
+}
+
+main#not-found .error-column.logo {
+	height: 100px;
+	width: 100px;
+}
 /* # Default Page Template
 ---------------------------------------------------------------------------------------------------- */
 h1.page-title{

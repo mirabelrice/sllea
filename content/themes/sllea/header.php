@@ -19,7 +19,6 @@
 	}
 
 ?>
-<!DOCTYPE html>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<title><?php echo $page_title; ?></title>
