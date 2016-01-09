@@ -65,8 +65,8 @@
 			$confirmation_body = "Here is a copy of your message:\n\n" .$this->contact_fields['message'];
 
 			if( wp_mail($sllea_email, $this->contact_fields['subject'], $sllea_body, $sllea_header) ) {
-				//wp_mail($this->contact_fields['email'], $confirmation_subj, $confirmation_body, $confirmation_header); // Send a copy of the message to the sender
-				echo "<br /><br /><span style='color:#a8b411;text-align;center;'>Your message has been sent. Thank you!</span>";
+				wp_mail($this->contact_fields['email'], $confirmation_subj, $confirmation_body, $confirmation_header); // Send a copy of the message to the sender
+				echo "<p style='color:#00b3e3; margin-bottom:24px; font-size: 16px;'>Your message has been sent. Thank you!</p>";
 			}
 		}
 
