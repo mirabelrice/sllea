@@ -329,12 +329,19 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-button.red {
+button.red,
+input[type="submit"].red{
 	border-radius: 28px;
  	background-color: #FA0D1C;
  	font-size: 14px;
  	font-weight: normal;
  	line-height: 14px;
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: none;
 }
 
 
