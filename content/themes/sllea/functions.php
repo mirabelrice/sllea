@@ -45,6 +45,7 @@
 		//contact page
 		if( is_page('contact') ){
 			wp_enqueue_style('our-team-style');
+			require_once get_stylesheet_directory() .'/templates/includes/sllea-contact-form.php';
 		}
 
 		//our model page
