@@ -1,7 +1,8 @@
 h1 {
-	padding-left: 32px;
+	display: table-row;
+	margin-bottom: 40px;
+	font-weight: normal;
 }
-
 h2.name {
 	margin-top: 0;
 }
@@ -11,6 +12,10 @@ h3.position {
 	line-height: 24px;
 	font-weight: 300;
 	text-align: left;
+}
+
+.page-wrap {
+	max-width: 960px;
 }
 
 .member-text-area h2 {
@@ -95,6 +100,59 @@ h3.position {
 	height: 200px;
 	float:left;
 	margin-right: 5%;
+}
+/* Social Icon List
+*********************************************/
+.social-icons-list {
+	text-align: left;
+	line-height: 24px;
+}
+
+.social-icons-list li {
+	padding: 0;
+	height: 30px;
+	width: 30px;
+	text-align: left;
+	margin: 0 3px;
+	line-height: 33px;
+}
+
+.social-icons-list .icon {
+	padding: 0;
+	font-size: 16px;
+	color: #6b6b6b;
+}
+
+.social-icons-list .icon:hover {
+	color: #00b3e3;
+}
+
+
+/* Contact Box
+*********************************************/
+#contact-box {
+	width: 20%;
+	padding-left: 6%;
+}
+
+#contact-box h4 {
+	margin-bottom: 0;
+	text-align: left;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #00b3e3;
+}
+
+#contact-box .contact-field {
+	font-size: 13px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	color:#6b6b6b;
+	margin-bottom: 20px;
+	text-align: left;
 }
 
 img.member-photo {
@@ -204,6 +262,48 @@ and (max-device-width : 667px) {
 	#creative-bios {
 		padding: 15px;
 	}
+}
+/*Contact Table
+*********************************************/
+#contact-table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 30px;
+	width: 100%;
+	background-color: #F5F5F5;
+}
+
+.contact-column {
+	display: table-cell;
+	vertical-align: top;
+}
+
+
+
+/* Message Form
+*********************************************/
+#message-box {
+	width: 50%;
+	padding-right:3%;
+}
+
+#message-box input[type="text"],
+#message-box textarea{
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #fff;
+}
+
+#message-box .title {
+	line-height: 24px;
+	letter-spacing: 2px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.field-wrap {
+	margin-bottom: 24px;
 }
 
 
