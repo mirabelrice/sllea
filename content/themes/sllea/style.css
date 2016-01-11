@@ -1067,7 +1067,7 @@ main.content{
 	color: #646568;
 	opacity: 1;
 	cursor: pointer;
-	z-index: 10;
+	z-index: 100;
 }
 
 #slide-forward {
