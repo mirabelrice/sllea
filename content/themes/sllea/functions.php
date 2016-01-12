@@ -40,6 +40,8 @@
 		if( is_page('donate') ){
 			wp_enqueue_style('donate-style');
 			wp_enqueue_script('donate-page');
+			require_once get_stylesheet_directory() .'/templates/includes/sllea-donation-form.php';
+			require_once get_stylesheet_directory() .'/includes/process_donation_form.php';
 		}
 
 		//contact page
