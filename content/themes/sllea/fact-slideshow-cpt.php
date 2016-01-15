@@ -32,5 +32,4 @@
 	add_action('init', 'fact_slideshow_enqueue_scripts');
 	function fact_slideshow_enqueue_scripts() {
 		wp_enqueue_media();
-		wp_enqueue_style('fact_slideshow_style', CHILD_URL . '/fact-slideshow-style.css' );
 	}
