@@ -1,10 +1,11 @@
 <?php
-	session_start();
+	ob_start();
 	if(isset($_POST['submit'])) {
 		process_donation();
 	}
 
 	function process_donation() {
+		session_start();
 		$donate_fields = array();
 		$errors = array();
 
@@ -47,4 +48,5 @@
 
 		return http_build_query($data);
 	}
+	ob_end_flush();
 ?>
