@@ -44,4 +44,6 @@
 	</div>
 </footer>
 <?php wp_footer(); ?>
+ <!-- END BODY WRAP-->
+</div>
 </body>

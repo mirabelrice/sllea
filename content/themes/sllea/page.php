@@ -1,7 +1,4 @@
-<?php
-	echo '<div class="body-wrap">';
- 	get_header();
-
+<?php get_header();
 		if(is_front_page()) :
 			get_template_part('templates/home-page');
 		else:
@@ -10,6 +7,4 @@
 				get_template_part( 'templates/content', $post->post_name);
 			endwhile;
 		endif;
-	get_footer();
-	echo '</div>';
-?>
+	get_footer(); ?>

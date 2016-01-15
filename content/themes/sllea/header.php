@@ -17,7 +17,6 @@
 		$menu_toggle_classes .= " landing";
 		$logo_text_classes .= " landing";
 	}
-
 ?>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -40,6 +39,8 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+ <!-- START BODY WRAP-->
+	<div class="body-wrap">
 	<?php include('sllea-slide-menu.php'); ?>
 	<header class= "<?php echo $header_classes; ?>">
 		<div class= "content-wrap">
@@ -66,11 +67,3 @@
 			</div>
 		</div>
 	</header>
-
-
-
-
-
-
-
-
