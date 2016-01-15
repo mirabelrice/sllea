@@ -547,6 +547,30 @@ input.donate-link.medium {
 .menu-item a.current-page {
 	color: #00b3e3;
 }
+.menu-item-has-children {
+	position: relative;
+}
+
+/*Sub menu item */
+ul.sub-menu {
+	position: absolute;
+	left: 50%;
+	display: none;
+	width: 200px;
+	padding: 12px;
+	margin-left: -100px;
+	border: 1px solid #f0f0f0;
+	text-align: center;
+	background-color: #fff;
+}
+
+#header-primary-nav ul.sub-menu .menu-item {
+	margin: 0;
+}
+
+.menu-item-has-children:hover ul.sub-menu{
+	display: block;
+}
 
 /* Slide Menu */
 #menu-toggle {
