@@ -1,7 +1,4 @@
 <?php
-	/**
-	 * Creates the header
-	*/
 	$logo_url = get_stylesheet_directory_uri() .'/images/mirbz.png';
 	$donate_url = get_bloginfo('url'). '/donate';
 	$header_classes = "site-header";
@@ -16,6 +13,9 @@
 		$nav_classes .= " hide";
 		$menu_toggle_classes .= " landing";
 		$logo_text_classes .= " landing";
+	}
+	if(is_page('donate')){
+		require_once get_stylesheet_directory() .'/includes/process-donation-form.php';
 	}
 ?>
 <head>

@@ -43,7 +43,6 @@
 			wp_enqueue_script('jquery-validation-plugin');
 			wp_enqueue_script('donate-page');
 			require_once get_stylesheet_directory() .'/templates/includes/sllea-donation-form.php';
-			require_once get_stylesheet_directory() .'/includes/process-donation-form.php';
 		}
 
 		//contact page

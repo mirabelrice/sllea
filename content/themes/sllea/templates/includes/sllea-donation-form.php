@@ -88,8 +88,8 @@
 						</fieldset>
 					</div>
 				</div>
-			</form>
-			<?php return ob_get_clean();
+			</form><?php
+			return ob_get_clean();
 		}
 
 		public function process_form() {

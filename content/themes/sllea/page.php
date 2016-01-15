@@ -7,4 +7,4 @@
 				get_template_part( 'templates/content', $post->post_name);
 			endwhile;
 		endif;
-	get_footer(); ?>
+get_footer(); ?>

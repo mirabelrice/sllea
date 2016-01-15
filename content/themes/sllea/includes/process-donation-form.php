@@ -1,5 +1,4 @@
 <?php
-	ob_start();
 	if(isset($_POST['submit'])) {
 		process_donation();
 	}
@@ -48,5 +47,4 @@
 
 		return http_build_query($data);
 	}
-	ob_end_flush();
 ?>
