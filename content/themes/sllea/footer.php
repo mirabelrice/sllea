@@ -25,9 +25,9 @@
 				<div class="footer-section footer-right">
 			  		<ul class= "social-icons-list">
 			  			<ul>
-				  			<li><a href= ""><span class="icon ion-social-facebook"></span></a></li>
-				  			<li><a href= ""><span class="icon ion-social-twitter"></span></a></li>
-				  			<li><a href= ""><span class="icon ion-social-instagram-outline"></span></a></li>
+				  			<li><a href= "http://facebook.com/sllea.org"><span class="icon ion-social-facebook"></span></a></li>
+				  			<li><a href= "http://twitter.com/sllea_org"><span class="icon ion-social-twitter"></span></a></li>
+				  			<li><a href= "http://www.linkedin.com/in/sllea-org-8b256b105"><span class="icon ion-social-linkedin"></span></a></li>
 			  			</ul>
 			  		</ul>
 			  	</div>
