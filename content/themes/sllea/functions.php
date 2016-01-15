@@ -22,7 +22,6 @@
 			wp_register_script( 'fact_slideshow_admin', get_template_directory_uri().'/lib/js/fact-slideshow.js', array('jquery', 'media-upload', 'media-views' ), true );
 			wp_register_script('donate-page',get_template_directory_uri().'/lib/js/donate-page.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('sllea-functions',get_template_directory_uri().'/lib/js/functions.js', array( 'jquery' ), '1.0.0', true );
-			wp_register_script('sllea-our-model',get_template_directory_uri().'/lib/js/our-model-functions.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('jquery-validation-plugin', 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js', array('jquery'));
 		}
 	}
@@ -54,7 +53,6 @@
 		//our model page
 		if( is_page('our-model') ){
 			wp_enqueue_style('our-model-style', get_template_directory_uri() . '/sllea-our-model-page.css' );
-			wp_enqueue_script('sllea-our-model');
 		}
 	}
 

@@ -27,8 +27,6 @@
 						</div>
 					</div>
 				</div>
-				<
-
 		<?php $row_num += 1;
 			endwhile;
 		} ?>
