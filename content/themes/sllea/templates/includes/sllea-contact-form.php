@@ -57,10 +57,10 @@
 		}
 
 		public function send_mail() {
-			$sllea_email = "Mirabel Rice <rice122@mail.chapman.edu>" . "\r\n"; //change to info@sllea.org
+			$sllea_email = "SLLEA <info@sllea.org>" . "\r\n";
 			$sllea_header = "From: " . $this->contact_fields['email'];
-			$sllea_body = $this->contact_fields['sender-name'] . " submitted the following message:\n\n" . $this->contact_fields['message'];
-			$confirmation_header = "From: SLLEA <rice122@mail.chapman.edu>";
+			$sllea_body = $this->contact_fields['sender-name'] . " Submitted the following message:\n\n" . $this->contact_fields['message'];
+			$confirmation_header = "From: SLLEA <info@sllea.org>";
 			$confirmation_subj = "SLLEA: Copy of your submission";
 			$confirmation_body = "Here is a copy of your message:\n\n" .$this->contact_fields['message'];
 
