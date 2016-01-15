@@ -7,32 +7,20 @@
 		}
 
 		public function form($donate_fields, $form_errors) {
+			$error_list_display = $this->has_errors? "block" : "none";
 			ob_start(); ?>
 				<form id= "sllea-make-donation" method="POST">
-				<input type="hidden" name="cmd" value="_donations">
-				<input type="hidden" name="business" value="paypal@sllea.org">
-				<input type="hidden" name="item_type" value="donation">
-				<input type="hidden" name="amount" value="">
-				<input type="hidden" name="currency_code" value="USD">
-				<input type="hidden" name="no_shipping" value="0">
-				<input type="hidden" name="no_note" value="1">
-				<input type="hidden" name="return" value="<?php echo WP_SITEURL; ?>/donate">
-				<input type="hidden" name="cancel_return" value="<?php echo WP_SITEURL; ?>/donate">
-				<input type="hidden" name="first_name" value="">
-				<input type="hidden" name="last_name" value="">
-				<?php if( $this->has_errors ) : ?>
-					<div id= "form-error-display">
-						<div id="form-errors">
-							<span><i class="fa fa-exclamation-triangle"></i>The following error(s) occured:</span>
-							<ul>
-								<li class="error donation"><?php echo $form_errors['donation']; ?></li>
-								<li class="error first-name"><?php echo $form_errors['first-name']; ?></li>
-								<li class="error last-name"><?php echo $form_errors['last-name']; ?></li>
-								<li class="error email"><?php echo $form_errors['email']; ?></li>
-							</ul>
-						</div>
+				<div id= "form-error-display" style="<?php echo "display:" . $error_list_display; ?>;">
+					<div id="form-errors">
+						<span><i class="fa fa-exclamation-triangle"></i>The following error(s) occured:</span>
+						<ul>
+							<li class="error donation"><?php echo $form_errors['donation']; ?></li>
+							<li class="error first-name"><?php echo $form_errors['first-name']; ?></li>
+							<li class="error last-name"><?php echo $form_errors['last-name']; ?></li>
+							<li class="error email"><?php echo $form_errors['email']; ?></li>
+						</ul>
 					</div>
-				<?php endif; ?>
+				</div>
 				<fieldset id= "select-donate-amount">
 					<legend>
 						<h2>Make a Donation</h2>
@@ -48,12 +36,13 @@
 						</ul>
 					</section>
 					<div class= "fieldset-wrap">
-						<div id= "donation-info">
-							<label class= "entry-label">Amount</label>
-							<i class="fa fa-usd"></i>
-							<div id= "donate-amount" class= "required">
-								<input id= "entered-donate-amount" class= "donate-entry" type="number" name= "donation" min="0" step="1" pattern="[0-9]*" value="<?php echo $donate_fields['donation']; ?>">
+						<div class="donate-field donate-amount">
+							<label class="entry-label">Amount</label>
+							<div id= "donate-amount" class= "donate-entry donation">
+								<span class="ion-social-usd"></span>
+								<input id= "entered-donate-amount" type="number" name= "donation" min="0" step="1" pattern="[0-9]*" value="<?php echo $donate_fields['donation']; ?>">
 								<span id= "currency">USD</span>
+								<p class="error-subtitle">Please Enter valid donation amount</p>
 							</div>
 						</div>
 					</div>
@@ -63,21 +52,24 @@
 					<div id= "contributor-wrap">
 						<fieldset id= "contact-info">
 							<div class= "fieldset-wrap">
-								<div class="full-name">
-									<label>Name</label>
+								<div class="donate-field full-name">
+									<label class= "entry-label">Name</label>
 									<div class="donate-entry first-name">
-										<input type= "text" name= "first-name" value="<?php echo $donate_fields['first-name']; ?>">
+										<input type= "text" name= "first-name" value="<?php echo $donate_fields['first-name']; ?>" pattern="[A-Za-z]">
 										<p>First Name</p>
+										<p class="error-subtitle">Please Enter valid first name</p>
 									</div>
 									<div class="donate-entry last-name">
-										<input type= "text" name= "last-name" value="<?php echo $donate_fields['last-name']; ?>">
+										<input type= "text" name= "last-name" value="<?php echo $donate_fields['last-name']; ?>" pattern="[A-Za-z]">
 										<p>Last Name</p>
+										<p class="error-subtitle">Please Enter valid last name</p>
 									</div>
 								</div>
-								<div id="email">
-									<label>Email</label>
-									<div class="donate-entry">
-										<input type= "text" name= "email" value="<?php echo $donate_fields['email']; ?>">
+								<div class="donate-field email">
+									<label class="entry-label">Email</label>
+									<div class="donate-entry email">
+										<input type= "email" name= "email" value="<?php echo $donate_fields['email']; ?>">
+										<p class="error-subtitle">Please Enter valid email</p>
 									</div>
 								</div>
 							</div>
@@ -91,7 +83,7 @@
 										<span id="final-donation-amount"><?php echo "$" . $donate_fields['donation']; ?></span>
 									</div>
 								</div>
-								<input class="payment-bottom donate-link medium" type="submit" name="submit" value="donate now" />
+								<input id="make-donation" class="payment-bottom donate-link medium" type="submit" name="submit" value="donate now" />
 							</section>
 						</fieldset>
 					</div>
@@ -117,18 +109,6 @@
 			} else {
 				$donate_fields['donation'] = 10;
 			}
-
-
-
-/*
-			if(isset($_POST['submit'])) {
-				if(count(array_filter($form_errors, 'strlen')) === 0) {
-					$this->has_errors = false;
-					$_SESSION['redirect_to_paypal'] = true;
-				} else{
-					$this->has_errors = true;
-				}
-*/
 			return $this->form($donate_fields, $form_errors);
 		}
 
