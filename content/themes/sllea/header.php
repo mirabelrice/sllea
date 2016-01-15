@@ -25,9 +25,6 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 	<link rel="icon" href="/wp-content/themes/sllea/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="/wp-content/themes/sllea/favicon.ico" type="image/x-icon" />
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 	<script src="https://use.typekit.net/byu3tqy.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script type="text/javascript">
