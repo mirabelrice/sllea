@@ -20,7 +20,7 @@
 			  			<span> &#124; <a href="<?php echo $terms_url; ?>">Terms</a></span>
 			  			<span>&#124; &copy 2015 Smart Living, Learning &amp Earning with Autism (SLLEA)</span>
 			  		</p>
-			  		<p><a href="https://github.com/mirabelrice">Site by Natalie&Mirabel Designs</a></p>
+			  		<p>Site by: <a href="http://www.linkedin.com/in/natalia-wheeler-15474760">Natalia&amp;Mirabel</a></p>
 			  	</div>
 				<div class="footer-section footer-right">
 			  		<ul class= "social-icons-list">
@@ -39,7 +39,7 @@
 				<span> &#124; <a href="<?php echo $terms_url; ?>">Terms</a></span>
 				<span>&#124; &copy 2015 Smart Living, Learning &amp Earning with Autism (SLLEA)</span>
 			</p>
-			<p>Site by:<a href="https://www.linkedin.com/in/natalia-wheeler-15474760"> Natalia&Mirabel</a></p>
+			<p>Site by: <a href="http://www.linkedin.com/in/natalia-wheeler-15474760">Natalia&amp;Mirabel</a></p>
 	  	</div>
 	</div>
 </footer>
