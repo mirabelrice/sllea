@@ -8,7 +8,8 @@ jQuery(document).ready(function($) {
  donationForm.validate({  errorPlacement: function(error, element) {}});
 
 	donateOptions.on("click", function(){
-    	var selectedAmount = $(this).children("a").attr('data-amount');
+    	var selectedAmount = $(this).find("a").attr('data-amount');
+
     	if(selectedAmount === "Other") {
     		enteredDonation.focus();
     	}else{
@@ -17,7 +18,7 @@ jQuery(document).ready(function($) {
     	}
 	});
 
-	enteredDonation.on("blur", function(){
+	enteredDonation.on("focusout", function(){
 		var otherAmount = $(this).val(),
 		finalAmount = '$' + otherAmount;
 		if(otherAmount.search(".") === -1) {
