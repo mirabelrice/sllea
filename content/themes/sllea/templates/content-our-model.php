@@ -18,7 +18,7 @@
 				?>
 				<div class="<?php echo $section_type; ?>">
 					<div class="content-column image">
-						<div class="image-wrap" style="background-image:url(http://sllea.local:8888/wp-content/uploads/2015/06/DSC_1795.jpg);"></div>
+						<div class="image-wrap" style="background-image:url(<?php echo $image; ?>)"></div>
 					</div>
 					<div class="content-column text">
 						<div class="text-wrap">
