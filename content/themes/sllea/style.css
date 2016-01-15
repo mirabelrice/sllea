@@ -344,6 +344,9 @@ fieldset {
 	border: none;
 }
 
+legend {
+	width: 100%;
+}
 
 /* ## Site Containers/wraps
 --------------------------------------------- */
@@ -466,7 +469,8 @@ main.content{
 
 /* # DONATE BUTTONS
 ---------------------------------------------------------------------------------------------------- */
-.donate-link a {
+.donate-link a,
+input.donate-link {
 	display: inline-block;
 	border-radius: 48px;
 	background-color: #FA0D1C;
@@ -481,7 +485,8 @@ main.content{
     cursor: pointer;
 }
 
-.donate-link a:hover {
+.donate-link a:hover,
+input.donate-link:hover {
 	box-shadow: none;
 	background:	#00b3e3 !important;
 	color: #ffffff !important;
@@ -498,7 +503,8 @@ main.content{
 	line-height: 16px;
 }
 
-.donate-link.medium a {
+.donate-link.medium a,
+input.donate-link.medium {
 	padding: 20px 25px;
 	font-size: 14px;
 	line-height: 20px;
