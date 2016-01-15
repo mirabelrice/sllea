@@ -19,7 +19,7 @@ define('DB_COLLATE', '');
 define('WPLANG', '');
 
 /*** Security Keys (Salt) ***/
-require('/wp-security-keys.php');
+require('<%= shared_path %>/wp-security-keys.php');
 define('DOMAIN_CURRENT_SITE', '<%= wp_domain %>');
 
 /*** PATHS/URLS ***/

@@ -5,7 +5,6 @@ set :local_domain, config['development_url']
 set :application, "sllea"
 set :repo_url, 'git@github.com:mirabelrice/sllea.git'
 set :scm, :git
-set :tmp_dir, "#{fetch(:stage)}/tmp"
 
 #Capistrano setup
 set :format, :pretty
@@ -18,9 +17,12 @@ set :keep_releases, 5
 
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 
-#linked files and directories
+#to prevent permissions error on remote tmp directory
+set :tmp_dir, "/home3/sllea/capistrano_tmp"
 set :linked_files, %w{wp-config.php}
-set :linked_dirs, %w{wp-content/uploads}
+set :linked_dirs, %w{content/uploads}
+
+
 
 namespace :deploy do
 	#wp files task
@@ -34,6 +36,6 @@ namespace :deploy do
 	after 'check:make_linked_dirs', :create_wp_files
 
 	after :finished, 'prompt:complete' do
-		print_sucess("deployment to #{fetch(:stage_domain)} complete.")
+		puts("deployment to #{fetch(:stage_domain)} complete.")
 	end
 end

@@ -1,0 +1,310 @@
+h1 {
+	display: table-row;
+	margin-bottom: 40px;
+	font-weight: normal;
+}
+h2.name {
+	margin-top: 0;
+}
+
+h3.position {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 300;
+	text-align: left;
+}
+
+.page-wrap {
+	max-width: 960px;
+}
+
+.member-text-area h2 {
+	margin-bottom: 0;
+	color: #00b3e3;
+}
+
+.content .inner-wrap {
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap:  wrap;
+
+	max-width: none;
+	padding: 32px 5% 0;
+}
+
+.site-container {
+	background-color: #f2f2f3;
+}
+
+.team-member {
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+
+    align-items: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+
+    max-height: 600px;
+    margin: 0 16px 32px 16px;
+}
+
+.team-member .member-image-area,
+.team-member.reversed .member-photo {
+	order: 1;
+	-webkit-order: 1;
+    -ms-flex-order: 1;
+}
+
+.team-member.reversed .member-text-area {
+	order: 2;
+	-webkit-order: 2;
+    -ms-flex-order: 2;
+}
+
+.member-text-area {
+	margin-top: 32px;
+}
+
+.member-text-area p {
+	text-align: left
+}
+
+.member-column {
+	display: inline-block;
+}
+
+
+.member-text-area {
+	display: inline-block;
+}
+
+.member-image-area {
+	display: inline-block;
+	height: 200px;
+	float:left;
+	margin-right: 5%;
+}
+/* Social Icon List
+*********************************************/
+.social-icons-list {
+	text-align: left;
+	line-height: 24px;
+}
+
+.social-icons-list li {
+	padding: 0;
+	height: 30px;
+	width: 30px;
+	text-align: left;
+	margin: 0 3px;
+	line-height: 33px;
+}
+
+.social-icons-list .icon {
+	padding: 0;
+	font-size: 16px;
+	color: #6b6b6b;
+}
+
+.social-icons-list .icon:hover {
+	color: #00b3e3;
+}
+
+
+/* Contact Box
+*********************************************/
+#contact-box {
+	width: 20%;
+	padding-left: 6%;
+}
+
+#contact-box h4 {
+	margin-bottom: 0;
+	text-align: left;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #00b3e3;
+}
+
+#contact-box .contact-field {
+	font-size: 13px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	color:#6b6b6b;
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+img.member-photo {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+@media only screen and (min-width: 960px) {
+	h3.position {
+		font-size: 18px;
+		line-height: 24px;
+	}
+
+	.content .inner-wrap {
+		display: block;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 32px 0 0;
+	}
+
+	.team-member {
+		flex-direction: row;
+    	-webkit-flex-direction: row;
+    	-ms-flex-direction: row;
+
+    	max-height: 200px;
+    	margin: 0 16px 32px 16px;
+	}
+
+	.team-member.reversed h3.position,
+	.team-member.reversed h2.name {
+		text-align: right;
+	}
+
+	.team-member.reversed {
+		justify-content: flex-end;
+   		-webkit-justify-content: flex-end;
+    	-ms-flex-pack: flex-end;
+	}
+
+	.team-member .member-photo {
+		order: 1;
+		-webkit-order: 1;
+	    -ms-flex-order: 1;
+	}
+
+	.team-member.reversed .member-text-area {
+		order: 1;
+		-webkit-order: 1;
+	    -ms-flex-order: 1;
+
+	    padding-right: 32px;
+	}
+
+	.team-member.reversed .member-photo {
+		order: 2;
+		-webkit-order: 2;
+   		-ms-flex-order: 2;
+   	}
+
+	.team-member .member-text-area {
+		order: 2;
+		-webkit-order: 2;
+   		-ms-flex-order: 2;
+
+		-webkit-flex: 2;
+    	-ms-flex: 2;
+    	flex: 2;
+
+    	padding-left: 32px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.member-text-area p {
+		font-size: 12px;
+	}
+	.member-text-area h2 {
+		font-size: 20px;
+	}
+	h3 {
+		font-size: 16px;
+	}
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 667px) { 
+	h1,
+	h2 {
+		font-size: 30px;
+	}
+	.member-text-area h2 {
+		font-size: 18px;
+	}
+	.member-text-area h3 {
+		font-size: 16px;
+	}
+	.member-text-area p {
+		font-size: 12px;
+	}
+	.main-content .wrap {
+		padding: 0;
+	}
+	#board-bios,
+	#creative-bios {
+		padding: 15px;
+	}
+}
+/*Contact Table
+*********************************************/
+#contact-table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 30px;
+	width: 100%;
+	background-color: #F5F5F5;
+}
+
+.contact-column {
+	display: table-cell;
+	vertical-align: top;
+}
+
+
+
+/* Message Form
+*********************************************/
+#message-box {
+	width: 50%;
+	padding-right:3%;
+}
+
+#message-box input[type="text"],
+#message-box textarea{
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #fff;
+}
+
+#message-box .title {
+	line-height: 24px;
+	letter-spacing: 2px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.field-wrap {
+	margin-bottom: 24px;
+}
+
+
+

@@ -1,0 +1,402 @@
+
+/* # Typography
+---------------------------------------------------------------------------------------------------- */
+body {
+	background-color:#00b3e3;
+}
+
+h1 {
+	text-align: center;
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 400;
+}
+
+#donate-statement p {
+	line-height: 20px;
+}
+
+#sllea-make-donation h2 {
+	margin: 0;
+	font-size: 20px;
+	text-align: left;
+}
+
+#select-donate-amount a {
+	color: #fff;
+}
+
+#text-block {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#donate-statement {
+	display: inline-block;
+	margin-bottom: 14px;
+}
+
+
+@media only screen and (min-width: 768px) {
+	h1 {
+		font-size: 32px;
+		line-height: 40px;
+	}
+
+	#sllea-make-donation h2 {
+		font-size: 24px;
+	}
+
+	#donate-statement p {
+		font-size: 16px;
+	}
+}
+
+/* #Page Wraps/Containers
+---------------------------------------------------------------------------------------------------- */
+#donate .inner-wrap {
+	padding: 3%;
+	background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+	#donate .inner-wrap {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+}
+
+/* ## Main Donation Form
+---------------------------------------------------------------------------------------------------- */
+/* Inputs */
+.fieldset-wrap {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 10px;
+	padding: 30px 20px;
+	text-align: left;
+}
+
+
+.donate-field {
+	display: table-row;
+}
+
+.donate-entry,
+.entry-label {
+	display: table-cell;
+	padding: 10px;
+}
+
+.entry-label {
+	font-size: 16px;
+	width: 1%;
+}
+
+.donate-entry  {
+	width: 30%;
+}
+
+.donate-entry input {
+	height: 40px;
+	padding: 5px 9px;
+	border-radius: 7px;
+}
+/* Donate amount entry*/
+#donate-amount {
+	width: 100%;
+}
+#entered-donate-amount {
+	width:132px;
+}
+
+#currency {
+	font-size: 16px;
+	color: green;
+}
+
+.donate-entry p {
+	padding: 0px 5px;
+	margin: 0;
+	font-size: 10px;
+	line-height: 20px;
+}
+
+.donate-link.large button{
+	width:200px;
+	font-size: 20px;
+}
+
+#sllea-make-donation {
+	text-align: center;
+}
+
+#donation-suggestions {
+	/* - Safari 6.1+. iOS 7.1+, BB10 */
+	display:-webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: center;
+
+	/* Spec - Firefox, Chrome, Opera */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+    flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+
+	width: 100%;
+}
+
+li.donate-option {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	margin: 15px 2.8%;
+	background-color: #00b3e3;
+	-moz-border-radius: 50%; 
+	-webkit-border-radius: 50%; 
+	border-radius: 50%;
+	line-height: 80px;
+	text-align: center;
+	cursor: pointer;
+}
+
+li.donate-option:hover {
+	opacity: 0.7;
+}
+
+#donation-info {
+	display: inline-block;
+}
+
+#donation-info label {
+	padding-right: 20px;
+}
+
+#contributor-wrap {
+	border: 1px solid silver;
+	border-radius: 7px;
+}
+
+@media only screen and (min-width: 768px) {
+	li.donate-option {
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+	}
+}
+
+#payment-info section {
+	/* - Safari 6.1+. iOS 7.1+, BB10 */
+	display:-webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: space-around;
+	-webkit-align-items: center;
+
+	/* Spec - Firefox, Chrome, Opera */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;	
+	align-items: center;
+
+	width: 100%;
+	border-top: 1px solid silver;
+}
+
+	#donation-summary {
+		border-right: 1px solid silver;
+	}
+
+	#final-donation-amount,
+	#donation-summary p {	
+		margin: 0;
+		text-align: center;
+	}
+
+	#amount-due {
+		position: relative;
+	}
+
+	#final-donation-amount {
+		font-size: 22px;
+		line-height: 22px;
+	}
+
+	.payment-bottom {
+		width: 50%;
+		text-align: center;
+		padding: 20px;
+	}
+
+/* ## form errors
+---------------------------------------------------------------------------------------------------- */
+#form-error-display {
+	margin-bottom: 30px;
+	border: 2px solid red;
+	text-align: left;
+}
+
+#form-errors > span {
+	display: inline-block;
+	width: 100%;
+	background-color: rgba(255,0,0,0.4);
+	font-weight: bold;
+	color: #fff;
+}
+
+#form-errors {
+	background-color: rgba(255,0,0,0.1);
+}
+
+#form-errors ul {
+	padding: 0 18px;
+	font-weight: 600;
+	color: rgba(255,0,0,1);
+}
+
+#form-errors ul li{
+	list-style-position: inside;
+}
+
+.donate-entry .error-subtitle {
+	display: none;
+	position: relative;
+	top: 8px;
+	width: 200px;
+	padding: 8px;
+	border-radius: 10px;
+	border: 2px solid #F5F5F5;
+	background-color: #F5F5F5;
+	box-shadow: 2px 2px 5px #dcdcdc;
+	font-size: 14px;
+}
+
+.donate-entry .error-subtitle:before {
+	content: "";
+	display: block; /* reduce the damage in FF3.0 */
+	position: absolute;
+	top: -12px;
+	left: 12px;
+	width: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #F5F5F5;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px)  {
+	body {
+		font-size: 10px;
+	}
+
+	#payment-info p,
+	#contributor-info > p,
+	fieldset h1 {
+		font-size: 16px;
+	}
+	input {
+		height: 25px;
+	}
+	.donate input, 
+	.donate select {
+		height: 25px;
+		font-size: 10px;
+	}
+
+	#donate .page-wrap {
+		padding: 20px 0;
+	}
+
+	#donate-statement {
+		padding: 5px 16px 20px;
+	}
+
+	.donate-option a {
+		font-size: 10px;
+	}
+	#select-donate-amount .fieldset-wrap {
+		text-align: center;
+		padding: 10px;
+	}
+
+
+	#select-donate-amount li {
+		line-height: 350%;
+	}
+	#select-donate-amount a {
+		font-size: 8px;
+	}
+
+	#donation-info label {
+		padding-right: 0;
+	}
+
+	#contact-info label,
+	#payment-info span {
+		width: 100%;
+	}
+
+	.donate-entry {
+		margin-left: 0;
+	}
+	#email .donate-entry {
+		width: 60%;
+	}
+	#donation-summary p {
+		margin: 0;
+	}
+	#final-donation-amount {
+		margin-top: 5px;
+		font-size: 16px;
+		font-weight: 800;
+	}
+
+	#amount-due .per-month-selected {
+		right: 0;
+		bottom: 0;
+		font-size: 10px;
+	}
+
+	.payment-bottom {
+		padding: 5px ;
+	}
+
+	.donate-link.large button {
+		width: 100px;
+		height: 40px;
+		padding: 12px 0px;
+		font-size: 11px;
+
+	}
+
+	::-webkit-input-placeholder {
+		font-size: 10px;
+		color: #7D8285;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+		font-size: 10px;
+		color: #7D8285; 
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+		font-size: 10px;
+		color: #7D8285; 
+	}
+
+	:-ms-input-placeholder { 
+		font-size: 10px; 
+		color: #7D8285; 
+	}
+}
+
+
+
+

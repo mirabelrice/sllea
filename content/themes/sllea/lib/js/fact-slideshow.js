@@ -1,88 +1,81 @@
 jQuery(document).ready( function($) {
 	var slideShow = $('#fact-slideshow-area'),
-		slideShowTop = slideShow.offset().top,
+		controlNav = slideShow.find('#slide-controls .controls.left li'),
+		directionalNav = slideShow.find(".direction-control"),
 		scroller = slideShow.find('.scroller'),
 		slideContainer = slideShow.find('.slides'),
 		slides = slideContainer.children('.slide'),
-		controlNav = slideShow.find('#slide-controls .controls.left li'),
-		directionalNav = slideShow.find('.direction-control'),
 		numSlides = slides.length - 1, //first and last slides are dummy slides
-		slideWidth = scroller.width(),
-		animationSpeed = 500,
-		transitionSpeed = 4000,
-		destinationSlide,
+		slideWidth = scroller.width(), //used to calculate margin for slide changes
 		currentSlide = 0,
-		anticipatedEvent = '',
-		direction,
-		isVisible = false,
-		pauseOnAction = true,
-		slideShowStarted = false,
-		atEnd = false,
-		override = false,
-		animating = false,
+		destinationSlide,
+		animationSpeed = 500, //speed of the slide change animation
+		transitionSpeed = 4000, //how long between slide changes
+		isPlaying = false,
+		isPaused = false,
+		isAnimating = false,
+		isAtEnd = false,
 		isDirectionalNav = false,
-		anticipatedEventTimer,
-		scrollTimer,
+		direction,
 		resizeTimer,
-		slideShowInterval,
-		eventType = "click",
-		globalProm = $.Deferred;
+		slideShowInterval;
 
+	/* Initialize Slideshow */
 	slideContainer.css('margin-left', (slideWidth * -1));
 	controlNav.eq(0).addClass("selected");
+	slideShowLoop();
 
+
+	/*SLIDSHOW CONTROL METHODS
+	********************************************************/
 	/* main loop for slide show*/
 	function slideShowLoop() {
-		slideShowStarted = isVisible = true;
+		isPlaying = true;
+
+		//loop through the slides
 		slideShowInterval = setInterval(function() {
-			globalProm = animateSlides(getTarget("next"));
-		}, transitionSpeed);	
+			animateSlides(getTarget("forward"));
+		}, transitionSpeed);
 	}
-	function getTarget(dir) {
-		if (dir === "next") {
-			return (currentSlide === numSlides - 1)? 0 : currentSlide + 1;//check if target slide is at end
+
+	/* Starts or stops slideshow */
+	function pause() {
+		isPaused = !isPaused;
+		if(isPlaying) {
+			clearInterval(slideShowInterval);
+			isPlaying = false;
 		} else {
-			return (currentSlide === 0)? numSlides - 1 : currentSlide - 1;//check if target slide is at beginning
+			slideShowLoop();
 		}
 	}
+
+	/* Controls slide transition from current slide to target */
 	function animateSlides(target, override) {
-		animating = true;
-		var changeMargin;
-		var animatePromise = new $.Deferred;
-
-		if(target === currentSlide) {
-			console.log("same slide");
-			animatePromise.resolve();
-			return animatePromise.promise();
-		}
-		
+		isAnimating = true;
 		destinationSlide = target;
+		var changeMargin;
+		isAtEnd = (destinationSlide === 0) || (destinationSlide === (numSlides - 1));
 
-		atEnd = (target === 0) || (target === (numSlides - 1));
-	
 		if(override) {
-			changeMargin = (target - currentSlide) * slideWidth;
-			if(isDirectionalNav && atEnd) {
-				changeMargin = (direction === "next")? slideWidth: slideWidth * -1;
+			if(isDirectionalNav) {
+				changeMargin = (direction === "forward")? slideWidth: slideWidth * -1;
+			}else {
+				changeMargin = (target - currentSlide) * slideWidth;
 			}
-		}else{
+		} else {
 			changeMargin = slideWidth;
 		}
 
 		transitionSlides(changeMargin).done(function(){
-			console.log("doneAnimating");
-			if(atEnd) {
-				jumpEnd();
-			}
-			animating = false;
+			if(isAtEnd){ resetSlides(); }
 			currentSlide = destinationSlide;
-			animatePromise.resolve();
-		});	
-		return animatePromise.promise();
+			isAnimating = false;
+			if(isPaused) { pause(); }
+		});
 	}
 
+	/* Returns promise when all slideshow animation is complate */
 	function transitionSlides(changeMargin) {
-		console.log("animating");
 		var defs = [];//holds deferred object variables for animations
 		defs.push(slideContainer.animate({'margin-left':'-='+ changeMargin}, animationSpeed).promise());
 		defs.push(controlNav.eq(currentSlide).removeClass("selected").promise());
@@ -90,131 +83,77 @@ jQuery(document).ready( function($) {
 		return $.when.apply(null, defs);
 	}
 
-	function jumpEnd() {
+	/* resets slideshow margin if at beginning or end of loop */
+	function resetSlides() {
 		if(destinationSlide === numSlides - 1){//going backwards from first to last slide, reset margin to end.
 			var resetMargin = slideWidth * -1 * (numSlides);
 			slideContainer.css('margin-left', resetMargin);
 		}else{//going forwards from last to first slide, reset margin to beginning.
 			slideContainer.css('margin-left', (slideWidth  * -1));
 		}
-		atEnd = false;
-	}	
+		isAtEnd = false;
+	}
 
-	/* slide control pagers*/
-	controlNav.on(eventType, controlNavClick);
-	function controlNavClick(){
-		console.log("nav control pressed");
-		override = true;
-		var def = $.Deferred;
-		controlNav.off('click', controlNavClick);
 
-		var $this = $(this),
-			target = $this.index();
+	/* EVENTS
+	***********************************************************/
+	/* slide control Nav click event */
+	controlNav.on("click", function(event) {
+		var target = $(this).index();
 
-		if(target != currentSlide) {
-			direction = (target > currentSlide) ? "next" : "prev";
-			if(animating){
-				globalProm.done(function(){	
-					clearInterval(slideShowInterval);
-					def = animateSlides(target, true);
-				});
-			}else{
-				clearInterval(slideShowInterval);
-				def = animateSlides(target, true);
-
-			}
-			def.done(function() {
-				console.log("transition done");
-				override = false;
-				//clearAnticipatedEvent();
-				anticipatedEvent = "";
-				controlNav.on("click", controlNavClick);
-				slideShowLoop();
-			});
+		//if not animating and valid target, stop slideshow interval and change to targeted slide.
+		if(!isAnimating && target != currentSlide) {
+			pause();
+			animateSlides(target, true);
 		}
-	}
+	});
 
-	/* Direction Controlls*/
-	directionalNav.on("click", directionalNavClick);
-
-	function directionalNavClick(){
-		directionalNav.off("click", directionalNavClick);
-		override = isDirectionalNav = true;
-		var navDir = $(this).hasClass('forward')? "next" : "prev",
+	directionalNav.on("click", function(event) {
+		var navDir = $(this).hasClass('forward')? "forward" : "back",
 		target = getTarget(navDir);
-		globalProm.done(function(){	
-			clearInterval(slideShowInterval);
+		isDirectionalNav = true;
+
+		if(!isAnimating && target != currentSlide) {
+			pause();
 			direction = navDir;
-			animateSlides(target, true).done(function(){
-				console.log("now ready to transition");
-				override = isDirectionalNav = false;
-				slideShowLoop();
-				directionalNav.on("click", directionalNavClick);
-			});	
-		});
-	}
+			animateSlides(target, true);
+			isDirectionalNav = false;
+		}
+	});
 
 	/*reset scroll width when window size changes*/
 	$(window).resize(function() {
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(function(){
-			if(!animating) {
-				clearInterval(slideShowInterval);
+			if(!isAnimating) {
+				pause();
 				getNewWidth();
-			}else{
-				if(!override) {
-					globalProm.done(function() {
-						clearInterval(slideShowInterval);
-						console.log("not animating resize");
-						getNewWidth();					
-					});
-				}		
+				pause();
 			}
-			if(isVisible && !override){slideShowLoop();}
-    	}, 500); 	
+    	}, 500);
     });
 
+
+	/* HELPER METHODS
+	****************************************************/
+	/* Returns slide index of target slide */
+	function getTarget(dir) {
+		if (dir === "forward") {
+			return (currentSlide === numSlides - 1)? 0 : currentSlide + 1;//check if target slide is at end
+		} else {
+			return (currentSlide === 0)? numSlides - 1 : currentSlide - 1;//check if target slide is at beginning
+		}
+	}
+
+	/* recalculates slideshow width when window size changes */
     function getNewWidth() {
     	var newWidth = scroller.width();
 		if(newWidth != slideWidth) {
 			var newMargin = newWidth * -1;
-			if(currentSlide != 0){newMargin *= (currentSlide + 1)}; 
+			if(currentSlide !== 0){ newMargin *= (currentSlide + 1); }
     		slideContainer.css('margin-left', newMargin);
-    		slideWidth = newWidth;	
+    		slideWidth = newWidth;
 		}
     }
 
-    $(window).scroll(function() {
-    	console.log("scrolling");
-    	clearTimeout(scrollTimer);
-    	scrollTimer = setTimeout(function(){
-    		console.log("timeout fired");
-	    	isVisible = isSlideShowInView();
-	    	if(isVisible) {
-	    		console.log("scrolled to visible");
-	    		if(!slideShowStarted && !override && !animating){
-	    			slideShowLoop();
-	    			/*
-	    			globalProm.done(function(){
-	    				clearInterval(slideShowInterval);
-	    				console.log("waiting until finished...");
-	    				slideShowLoop();
-	    			});
-*/
-    			}	
-	    	}else{
-	    		console.log("scrolled out of view");
-	    		if(slideShowStarted){
-	    			clearInterval(slideShowInterval);
-	    		}
-	    	}
-    	}, 500);
-    });
-
-    function isSlideShowInView() {
-    	var docViewTop = $(window).scrollTop(),
-        	docViewBottom = docViewTop + $(window).height(),
-         	inView = (docViewBottom >= slideShowTop);
-        return inView;
-    }
 });
