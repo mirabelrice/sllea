@@ -23,6 +23,7 @@
 			wp_register_script('donate-page',get_template_directory_uri().'/lib/js/donate-page.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('sllea-functions',get_template_directory_uri().'/lib/js/functions.js', array( 'jquery' ), '1.0.0', true );
 			wp_register_script('sllea-our-model',get_template_directory_uri().'/lib/js/our-model-functions.js', array( 'jquery' ), '1.0.0', true );
+			wp_register_script('jquery-validation-plugin', 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js', array('jquery'));
 		}
 	}
 
@@ -39,7 +40,10 @@
 		//donate page
 		if( is_page('donate') ){
 			wp_enqueue_style('donate-style');
+			wp_enqueue_script('jquery-validation-plugin');
 			wp_enqueue_script('donate-page');
+			require_once get_stylesheet_directory() .'/templates/includes/sllea-donation-form.php';
+			require_once get_stylesheet_directory() .'/includes/process-donation-form.php';
 		}
 
 		//contact page
@@ -155,6 +159,7 @@
 		}
 		return $trimmed_text;
 	}
+
 	require get_stylesheet_directory() .'/templates/includes/helpers.php';
 	require get_stylesheet_directory() .'/includes/team-cpt.php';
 	require get_stylesheet_directory() .'/fact-slideshow-template.php';
