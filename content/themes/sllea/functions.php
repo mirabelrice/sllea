@@ -164,3 +164,4 @@
 	require get_stylesheet_directory() .'/includes/team-cpt.php';
 	require get_stylesheet_directory() .'/fact-slideshow-template.php';
 	require get_stylesheet_directory() .'/fact-slideshow-cpt.php';
+?>

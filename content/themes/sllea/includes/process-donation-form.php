@@ -1,10 +1,10 @@
 <?php
+	session_start();
 	if(isset($_POST['submit'])) {
 		process_donation();
 	}
 
 	function process_donation() {
-		session_start();
 		$donate_fields = array();
 		$errors = array();
 
