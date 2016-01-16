@@ -25,6 +25,7 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/sllea-favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="<?php bloginfo('template_url'); ?>/sllea-favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon" />
 	<script src="https://use.typekit.net/byu3tqy.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script type="text/javascript">
