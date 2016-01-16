@@ -1,6 +1,6 @@
 <?php
 	$logo_url = get_stylesheet_directory_uri() .'/images/mirbz.png';
-	$contact_url = get_bloginfo('url') . '/contact-us';
+	$contact_url = get_bloginfo('url') . '/contact';
 	$privacy_url = get_bloginfo('url') . '/privacy-policy';
 	$terms_url = get_bloginfo('url') . '/terms';
 ?>
