@@ -136,15 +136,15 @@
 	}
 
 	function sllea_page_title() {
+		$page_title;
 		if (is_front_page()) {
-			echo 'Smart Living Learning & Earning with Autism';
+			return '&nbsp;SLLEA';
+		}elseif(is_404()){
+			$page_title = 'Page Not Found';
+		}else{
+			$page_title  = get_the_title();
 		}
-		elseif(is_404()) {
-			echo 'Not Found -';
-		}
-		else{
-			bloginfo('name');
-		}
+		return $page_title . '&nbsp;&#124;&nbsp;' . 'SLLEA';
 	}
 
 	function trim_text($text, $max_length) {

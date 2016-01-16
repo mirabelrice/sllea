@@ -3,12 +3,10 @@
 	$donate_url = get_bloginfo('url'). '/donate';
 	$header_classes = "site-header";
 	$nav_classes = "header-column";
-	$is_landing = is_front_page();
-	$page_title = $is_landing? '&nbsp;SLLEA' : '&nbsp;SLLEA' . '&nbsp;&#124;&nbsp;' . get_the_title();
 	$logo_text_classes = "logo-column text";
 	$menu_toggle_classes = '';
 
-	if($is_landing) {
+	if(is_front_page()) {
 		$header_classes .= " landing";
 		$nav_classes .= " hide";
 		$menu_toggle_classes .= " landing";
@@ -20,12 +18,10 @@
 ?>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
-	<title><?php echo $page_title; ?></title>
+	<title><?php echo sllea_page_title(); ?></title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/sllea-favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="<?php bloginfo('template_url'); ?>/sllea-favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon" />
 	<script src="https://use.typekit.net/byu3tqy.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<script type="text/javascript">
