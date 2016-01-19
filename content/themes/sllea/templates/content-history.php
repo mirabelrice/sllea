@@ -1,7 +1,6 @@
 <?php
 	$background_image = get_field("background_image");
 	if(!$background_image){ $background_image = get_stylesheet_directory_uri() .'/images/sitting-around-table.jpg'; }
-	$text = get_field("text");
 ?>
 
 <main class="content history">
@@ -11,7 +10,7 @@
 	<div class="page-wrap landing" >
 		<div class="entry-content">
 			<h1>History</h1>
-			<?php echo $text; ?>
+			<?php the_content(); ?>
 		</div>
 	</div>
 </main>
