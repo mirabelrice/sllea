@@ -4,7 +4,7 @@
 */
 /*** ENVIRONMENT ***/
 define('WP_ENV', '<%= wp_env %>');
-
+$site_root = (WP_ENV === 'production')? '<%= project_path %>/public_html/' : '<%= project_path %>/dev/';
 $table_prefix  = 'wp_';
 
 /*** DATABASE CONFIGURATION ***/
@@ -25,7 +25,7 @@ define('DOMAIN_CURRENT_SITE', '<%= wp_domain %>');
 /*** PATHS/URLS ***/
 define('WP_HOME', 'http://'.DOMAIN_CURRENT_SITE);
 define('WP_SITEURL', 'http://'.DOMAIN_CURRENT_SITE);
-if(!defined('ABSPATH')) define('ABSPATH', '<%= project_path %>/public_html/');
+if(!defined('ABSPATH')) define('ABSPATH', $site_root);
 
 /*** INCLUDES ***/
 require_once(ABSPATH . 'wp-settings.php');
